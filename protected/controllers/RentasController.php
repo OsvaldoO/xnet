@@ -97,7 +97,8 @@ class RentasController extends Controller
 		 		$model->fin = strtotime ( '+'.$model->tiempo.' minute' , strtotime ( $model->hora ) ) ;
 				$model->fin = date ('G:i', $model->fin );
 				$model->restante = $this->restante($model->fin);
-				$model->costo = $model->tiempo * 0.2;
+				($model->pago) ? $model->costo = 0 : $model->costo = $model->tiempo * 0.2;
+				//$model->costo = $model->tiempo * 0.2;
 		 		$model->accion='Detener';
 		 		}
 		 		else $model->accion = 'Iniciar';
@@ -114,11 +115,13 @@ class RentasController extends Controller
 		$actual = date( "G:i" );
 		$datetime1 = new DateTime( $actual );
 		$datetime2 = new DateTime( $final );
-		if ( $datetime1 > $datetime2 ) {
+		if ( $datetime1 >= $datetime2 ) {
 			return 0;
 		}
 		$interval = $datetime1->diff($datetime2);
-		return $interval->format('%h horas %i');
+		if ($interval->format('%h') == 0 ) 
+			return $interval->format('%i');
+		return $interval->format('%h hrs %i');
 	}
 
 	/**
