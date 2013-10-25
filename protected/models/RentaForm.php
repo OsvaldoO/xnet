@@ -15,6 +15,8 @@ class RentaForm extends CFormModel
 	public $horas;
 	public $hora;
 	public $accion;
+	public $costo;
+	public $restante;
 	
 
 	/**
@@ -25,7 +27,7 @@ class RentaForm extends CFormModel
 		return array(
 			// name, email, subject and body are required
 			//array(', 'required'),
-			array('pago fin sistema accion horas minutos', 'safe')
+			array('pago fin sistema accion horas minutos restante costo', 'safe')
 		);
 	}
 
@@ -37,7 +39,9 @@ class RentaForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			'pago'=>'Pagado',
+			'horas'=>'Hs',
+			'minutos'=>'Ms',
+			'pago'=>'$',
 		);
 	}
 }

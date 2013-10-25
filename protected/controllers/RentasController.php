@@ -7,24 +7,25 @@ class RentasController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
-	public $model;
 	/**
 	 * @return array action filters
 	 */
 	
 	 public function actionIndex()
     {
-     /* $form = new RentaForm;
-    	$model = new CActiveForm('application.views.rentas._rentaForm', $form);
-    	if($model->submitted('Iniciar') && $model->validate()){
-         $this->render('index', array( 'model' => $form, 'extra' => $extra));
-         }*/
 		 $extra = array();
-		 $sistema = Sistema::model()->findByPk(2);
-		 $extra['sistema'] = $sistema->nombre;
-		 $extra['id'] = $sistema->id; 
+		 $system = array();
+		 $sistemas = Sistema::model()->findAll();
+		 foreach($sistemas as $system){
+		 		$sistem[$system->id]['sys'] = $system;
+		 	if(!$system->disponible){
+		 		$sistem[$system->id]['model'] = Renta::model()->find('sistema='.$system->id );
+		 	}
+		 	
+		 }
+		 //$extra['sistema'] = $sistema->nombre;
+		 //$extra['id'] = $sistema->id; 
 		 $this->model = new RentaForm;
-
 		 if(isset($_POST['RentaForm']))
 			{
 				$this->model->attributes=$_POST['RentaForm'];
@@ -38,13 +39,46 @@ class RentasController extends Controller
 				else $this->model->accion = 'Iniciar';
 				$extra['restante'] = $this->restante($this->model->fin);
  				($this->model->pago) ? $extra['costo'] = 0 : $extra['costo'] = $this->model->tiempo * 0.2;
-		      $this->render('index', array( 'model' => $this->model, 'extra' => $extra));
+		      $this->render('index', array( 'model' => $this->model, 'extra' => $extra, 'sistemas' => $sistem ));
 			}
 			else{
 		  $this->model->accion = 'Iniciar';
-		  $this->render('index', array( 'model' => $this->model, 'extra' => $extra));
+		  $this->render('index', array( 'model' => $this->model, 'extra' => $extra, 'sistemas' => $sistem ));
 		 }
     }
+    
+    public function actionRealizar ( $id = 1 ){
+    	$sistemas = array();
+    	$sistema = new Sistema;
+		 foreach(Sistema::model()->findAll() as $system)
+		 		$sistemas[$system->id] = $system;
+       	$model = new RentaForm;
+			if(isset($_POST['RentaForm'])){
+				$model->attributes=$_POST['RentaForm'];
+		 	 	if($model->accion == 'Iniciar' ){
+		 	 		$renta = new Renta;
+		 	 		$renta->sistema = $id;
+					$renta->hora = date("G:i");
+					$renta->tiempo = ($model->horas*60)+$model->minutos;
+					$renta->fecha = date("Y/n/j"); 
+					if( $renta->save() ){
+							$sistemas[$id]->disponible = 0;
+						}
+						$model = $this->cargarModel( false, $model, $id );
+			}
+			else if($model->accion == 'Detener' ) { 
+			$sistemas[$id]->disponible = 1;
+			$model->accion = 'Iniciar';
+			}
+			$sistema = $sistemas[$id];
+			$sistema->save();
+			$this->render('realizar', array( 'model' => $model, 'sistemas' => $sistemas, 'id'=>$id ));
+		}
+		else{
+				$model = $this->cargarModel( $sistemas[$id]->disponible, $model, $id);
+				$this->render('realizar', array( 'model' => $model, 'sistemas' => $sistemas, 'id'=>$id ));
+			}
+		 }
     
 	public function filters()
 	{
@@ -54,20 +88,37 @@ class RentasController extends Controller
 		);
 	}
 	
+	public function cargarModel( $disponible, $model, $id ){
+		if(!$disponible){
+		 		$renta = Renta::model()->find('sistema='.$id );
+		 		$model->sistema = $renta->sistema;
+		 		$model->hora = substr($renta->hora, 0, 5);
+		 		$model->tiempo = $renta->tiempo;
+		 		$model->fin = strtotime ( '+'.$model->tiempo.' minute' , strtotime ( $model->hora ) ) ;
+				$model->fin = date ('G:i', $model->fin );
+				$model->restante = $this->restante($model->fin);
+				$model->costo = $model->tiempo * 0.2;
+		 		$model->accion='Detener';
+		 		}
+		 		else $model->accion = 'Iniciar';
+		 		$model->hora = $this->to12h($model->hora);
+		 		$model->fin = $this->to12h($model->fin);
+		 		return $model;
+	}
+	
+	function to12h( $hora ) {
+    	return date("g:i", strtotime( $hora ));
+}
+	
 	public function restante( $final ){
-		$actual = date( "g:i" );
+		$actual = date( "G:i" );
 		$datetime1 = new DateTime( $actual );
 		$datetime2 = new DateTime( $final );
 		if ( $datetime1 > $datetime2 ) {
-			$final = strtotime ( '+5 hour' , strtotime ( $final ) ) ;
-	   	$final = date ('g:i', $final );
-			$actual = strtotime ( '+5 hour' , strtotime ( $actual ) ) ;
-			$actual = date ('g:i', $actual );
-			$datetime1 = new DateTime($actual);
-			$datetime2 = new DateTime($final);
+			return 0;
 		}
 		$interval = $datetime1->diff($datetime2);
-		return $interval->format('%h horas %i minutos');
+		return $interval->format('%h horas %i');
 	}
 
 	/**
@@ -87,7 +138,7 @@ class RentasController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','listar'),
+				'actions'=>array('admin','delete','listar','realizar'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users

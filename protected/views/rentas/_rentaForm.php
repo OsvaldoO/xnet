@@ -1,7 +1,7 @@
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-    'id'=>'rentaForm-form',
+    'id'=>'rentaForm'.$sistema->id.'-form',
     // Please note: When you enable ajax validation, make sure the corresponding
     // controller action is handling ajax validation correctly.
     // There is a call to performAjaxValidation() commented in generated controller code.
@@ -23,15 +23,21 @@
     
     <?php echo CHtml::activeHiddenField($model,'sistema'); ?>
     <?php echo CHtml::activeHiddenField($model,'accion', array ( 'value' => $model->accion ) ); ?>
-    
+
     <div class="left">
     		<?php echo CHtml::activeLabel($model,'pago'); ?>
         <?php echo CHtml::activeCheckBox($model,'pago', array( 'checked'=>false)); ?>
     </div>
  
+
     <div class="left submit">
          <?php echo CHtml::submitButton($model->accion); ?>
     </div>
  
-<?php $this->endWidget(); ?>
+
 </div><!-- form -->
+<?php $this->endWidget(); ?>
+
+
+
+
