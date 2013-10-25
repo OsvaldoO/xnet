@@ -13,38 +13,7 @@ class RentasController extends Controller
 	
 	 public function actionIndex()
     {
-		 $extra = array();
-		 $system = array();
-		 $sistemas = Sistema::model()->findAll();
-		 foreach($sistemas as $system){
-		 		$sistem[$system->id]['sys'] = $system;
-		 	if(!$system->disponible){
-		 		$sistem[$system->id]['model'] = Renta::model()->find('sistema='.$system->id );
-		 	}
-		 	
-		 }
-		 //$extra['sistema'] = $sistema->nombre;
-		 //$extra['id'] = $sistema->id; 
-		 $this->model = new RentaForm;
-		 if(isset($_POST['RentaForm']))
-			{
-				$this->model->attributes=$_POST['RentaForm'];
-				if($this->model->accion == 'Iniciar' ){
-					$this->model->hora = date("g:i");
-					$this->model->tiempo = ($this->model->horas*60)+$this->model->minutos;
-					$this->model->fin = strtotime ( '+'.$this->model->tiempo.' minute' , strtotime ( $this->model->hora ) ) ;
-					$this->model->fin = date ('g:i', $this->model->fin );
-					$this->model->accion = 'Detener';
-				}
-				else $this->model->accion = 'Iniciar';
-				$extra['restante'] = $this->restante($this->model->fin);
- 				($this->model->pago) ? $extra['costo'] = 0 : $extra['costo'] = $this->model->tiempo * 0.2;
-		      $this->render('index', array( 'model' => $this->model, 'extra' => $extra, 'sistemas' => $sistem ));
-			}
-			else{
-		  $this->model->accion = 'Iniciar';
-		  $this->render('index', array( 'model' => $this->model, 'extra' => $extra, 'sistemas' => $sistem ));
-		 }
+		
     }
     
     public function actionRealizar ( $id = 1 ){
@@ -63,6 +32,7 @@ class RentasController extends Controller
 					$renta->fecha = date("Y/n/j"); 
 					if( $renta->save() ){
 							$sistemas[$id]->disponible = 0;
+							$sistemas[$id]->pagado = $model->pago;
 						}
 						$model = $this->cargarModel( false, $model, $id );
 			}
@@ -75,6 +45,7 @@ class RentasController extends Controller
 			$this->render('realizar', array( 'model' => $model, 'sistemas' => $sistemas, 'id'=>$id ));
 		}
 		else{
+				$model->pago = $sistemas[$id]->pagado;
 				$model = $this->cargarModel( $sistemas[$id]->disponible, $model, $id);
 				$this->render('realizar', array( 'model' => $model, 'sistemas' => $sistemas, 'id'=>$id ));
 			}
@@ -98,7 +69,6 @@ class RentasController extends Controller
 				$model->fin = date ('G:i', $model->fin );
 				$model->restante = $this->restante($model->fin);
 				($model->pago) ? $model->costo = 0 : $model->costo = $model->tiempo * 0.2;
-				//$model->costo = $model->tiempo * 0.2;
 		 		$model->accion='Detener';
 		 		}
 		 		else $model->accion = 'Iniciar';

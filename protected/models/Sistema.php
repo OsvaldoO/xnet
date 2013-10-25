@@ -8,6 +8,7 @@
  * @property string $nombre
  * @property string $tipo
  * @property integer $disponible
+  * @property integer $pagado
  */
 class Sistema extends CActiveRecord
 {
@@ -28,12 +29,12 @@ class Sistema extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('nombre, tipo', 'required'),
-			array('disponible', 'numerical', 'integerOnly'=>true),
+			array('disponible, pagado', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>20),
 			array('tipo', 'length', 'max'=>12),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, tipo, disponible', 'safe', 'on'=>'search'),
+			array('id, nombre, tipo, disponible, pagado', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,6 +59,7 @@ class Sistema extends CActiveRecord
 			'nombre' => 'Nombre',
 			'tipo' => 'Tipo',
 			'disponible' => 'Disponible',
+						'pagado' => 'Pagado',
 		);
 	}
 
@@ -83,6 +85,7 @@ class Sistema extends CActiveRecord
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('tipo',$this->tipo,true);
 		$criteria->compare('disponible',$this->disponible);
+		$criteria->compare('pagado',$this->pagado);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
