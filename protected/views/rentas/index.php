@@ -1,30 +1,20 @@
 <?php
-/* @var $this UsersController */
-/* @var $model Users */
+/* @var $this RentasController */
+/* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-    'Rentas',
+	'Rentas',
 );
 
 $this->menu=array(
-	foreach( $sistemas as $system ) { 
-    array('label'=>$system['sys']->nombre, 'url'=>array('index/'.$system['sys']->id)),
-    }
-    array('label'=>'Pausar Rentas', 'url'=>array('admin')),
+	array('label'=>'Create Renta', 'url'=>array('create')),
+	array('label'=>'Manage Renta', 'url'=>array('admin')),
 );
 ?>
+
 <h1>Rentas</h1>
-<? foreach( $sistemas as $system ) { ?>
-<div style="border:solid black; padding:10px;float:left">
-<h3><?php echo $system['sys']->nombre?></h3>
-<?php $this->renderPartial('_rentaForm', array('model'=>$model, 'extra'=>$extra, 'sistema'=> $system));
-if (isset($model->hora)){
-echo '<div style="border:solid black; padding:10px;float:left">';
-	echo 'Inició: '.$model->hora.' -----> ';
-	echo 'Termina: '.$model->fin.'</br>';
-	echo 'Restan: '.$extra['restante'].'</br>';
-	echo 'Deve: '.$extra['costo'].'$</br>';
-	echo '</div>';
-	}?>
-</div>
-<? } ?>
+
+<?php $this->widget('zii.widgets.CListView', array(
+	'dataProvider'=>$dataProvider,
+	'itemView'=>'_view',
+)); ?>

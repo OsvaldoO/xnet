@@ -7,91 +7,16 @@ class RentasController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
+
 	/**
 	 * @return array action filters
 	 */
-	
-	 public function actionIndex()
-    {
-		
-    }
-    
-    public function actionRealizar ( $id = 1 ){
-    	$sistemas = array();
-    	$sistema = new Sistema;
-		 foreach(Sistema::model()->findAll() as $system)
-		 		$sistemas[$system->id] = $system;
-       	$model = new RentaForm;
-			if(isset($_POST['RentaForm'])){
-				$model->attributes=$_POST['RentaForm'];
-		 	 	if($model->accion == 'Iniciar' ){
-		 	 		$renta = new Renta;
-		 	 		$renta->sistema = $id;
-					$renta->hora = date("G:i");
-					$renta->tiempo = ($model->horas*60)+$model->minutos;
-					$renta->fecha = date("Y/n/j"); 
-					if( $renta->save() ){
-							$sistemas[$id]->disponible = 0;
-							$sistemas[$id]->pagado = $model->pago;
-						}
-						$model = $this->cargarModel( false, $model, $id );
-			}
-			else if($model->accion == 'Detener' ) { 
-			$sistemas[$id]->disponible = 1;
-			$model->accion = 'Iniciar';
-			}
-			$sistema = $sistemas[$id];
-			$sistema->save();
-			$this->render('realizar', array( 'model' => $model, 'sistemas' => $sistemas, 'id'=>$id ));
-		}
-		else{
-				$model->pago = $sistemas[$id]->pagado;
-				$model = $this->cargarModel( $sistemas[$id]->disponible, $model, $id);
-				$this->render('realizar', array( 'model' => $model, 'sistemas' => $sistemas, 'id'=>$id ));
-			}
-		 }
-    
 	public function filters()
 	{
 		return array(
 			'accessControl', // perform access control for CRUD operations
 			'postOnly + delete', // we only allow deletion via POST request
 		);
-	}
-	
-	public function cargarModel( $disponible, $model, $id ){
-		if(!$disponible){
-		 		$renta = Renta::model()->find('sistema='.$id );
-		 		$model->sistema = $renta->sistema;
-		 		$model->hora = substr($renta->hora, 0, 5);
-		 		$model->tiempo = $renta->tiempo;
-		 		$model->fin = strtotime ( '+'.$model->tiempo.' minute' , strtotime ( $model->hora ) ) ;
-				$model->fin = date ('G:i', $model->fin );
-				$model->restante = $this->restante($model->fin);
-				($model->pago) ? $model->costo = 0 : $model->costo = $model->tiempo * 0.2;
-		 		$model->accion='Detener';
-		 		}
-		 		else $model->accion = 'Iniciar';
-		 		$model->hora = $this->to12h($model->hora);
-		 		$model->fin = $this->to12h($model->fin);
-		 		return $model;
-	}
-	
-	function to12h( $hora ) {
-    	return date("g:i", strtotime( $hora ));
-}
-	
-	public function restante( $final ){
-		$actual = date( "G:i" );
-		$datetime1 = new DateTime( $actual );
-		$datetime2 = new DateTime( $final );
-		if ( $datetime1 >= $datetime2 ) {
-			return 0;
-		}
-		$interval = $datetime1->diff($datetime2);
-		if ($interval->format('%h') == 0 ) 
-			return $interval->format('%i');
-		return $interval->format('%h hrs %i');
 	}
 
 	/**
@@ -111,7 +36,7 @@ class RentasController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','listar','realizar'),
+				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -191,14 +116,14 @@ class RentasController extends Controller
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
-	
+
 	/**
 	 * Lists all models.
 	 */
-	public function actionListar()
+	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Renta');
-		$this->render('listar',array(
+		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}

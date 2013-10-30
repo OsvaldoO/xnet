@@ -17,8 +17,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'sistema'); ?>
-		<?php echo $form->textField($model,'sistema'); ?>
+		<?php echo $form->label($model,'equipo'); ?>
+		<?php echo $form->textField($model,'equipo'); ?>
 	</div>
 
 	<div class="row">
@@ -29,6 +29,11 @@
 	<div class="row">
 		<?php echo $form->label($model,'tiempo'); ?>
 		<?php echo $form->textField($model,'tiempo',array('size'=>3,'maxlength'=>3)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'usuario'); ?>
+		<?php echo $form->textField($model,'usuario',array('size'=>20,'maxlength'=>20)); ?>
 	</div>
 
 	<div class="row">

@@ -17,7 +17,7 @@ return array(
 		'application.models.*',
 		'application.components.*',
 	),
-
+    'timeZone'=>'America/Mexico_City',
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 

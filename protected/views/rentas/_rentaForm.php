@@ -21,7 +21,7 @@
         <?php echo CHtml::activeNumberField($model,'minutos', array( 'step'=>15, 'value'=>($model->minutos)?$model->minutos:30, 'min'=>0, 'max'=>45 )) ?>
     </div>
     
-    <?php echo CHtml::activeHiddenField($model,'sistema'); ?>
+    <?php echo CHtml::activeHiddenField($model,'equipo',array ( 'value' => $sistema->id ) ); ?>
     <?php echo CHtml::activeHiddenField($model,'accion', array ( 'value' => $model->accion ) ); ?>
 
     <div class="left">

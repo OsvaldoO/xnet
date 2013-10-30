@@ -9,8 +9,8 @@
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('sistema')); ?>:</b>
-	<?php echo CHtml::encode($data->sistema); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('equipo')); ?>:</b>
+	<?php echo CHtml::encode($data->equipo); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('hora')); ?>:</b>
@@ -19,6 +19,10 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('tiempo')); ?>:</b>
 	<?php echo CHtml::encode($data->tiempo); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('usuario')); ?>:</b>
+	<?php echo CHtml::encode($data->usuario); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('fecha')); ?>:</b>

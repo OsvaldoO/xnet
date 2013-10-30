@@ -22,9 +22,10 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'sistema',
+		'equipo',
 		'hora',
 		'tiempo',
+		'usuario',
 		'fecha',
 	),
 )); ?>

@@ -20,9 +20,9 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'sistema'); ?>
-		<?php echo $form->textField($model,'sistema'); ?>
-		<?php echo $form->error($model,'sistema'); ?>
+		<?php echo $form->labelEx($model,'equipo'); ?>
+		<?php echo $form->textField($model,'equipo'); ?>
+		<?php echo $form->error($model,'equipo'); ?>
 	</div>
 
 	<div class="row">
@@ -35,6 +35,12 @@
 		<?php echo $form->labelEx($model,'tiempo'); ?>
 		<?php echo $form->textField($model,'tiempo',array('size'=>3,'maxlength'=>3)); ?>
 		<?php echo $form->error($model,'tiempo'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'usuario'); ?>
+		<?php echo $form->textField($model,'usuario',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->error($model,'usuario'); ?>
 	</div>
 
 	<div class="row">

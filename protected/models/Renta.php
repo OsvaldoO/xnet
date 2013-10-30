@@ -5,9 +5,10 @@
  *
  * The followings are the available columns in table 'tbl_rentas':
  * @property integer $id
- * @property integer $sistema
+ * @property integer $equipo
  * @property string $hora
  * @property string $tiempo
+ * @property string $usuario
  * @property string $fecha
  */
 class Renta extends CActiveRecord
@@ -28,12 +29,13 @@ class Renta extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('sistema, hora, fecha', 'required'),
-			array('sistema', 'numerical', 'integerOnly'=>true),
+			array('equipo, hora, usuario, fecha', 'required'),
+			array('equipo', 'numerical', 'integerOnly'=>true),
 			array('tiempo', 'length', 'max'=>3),
+			array('usuario', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, sistema, hora, tiempo, fecha', 'safe', 'on'=>'search'),
+			array('id, equipo, hora, tiempo, usuario, fecha', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,9 +57,10 @@ class Renta extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'sistema' => 'Sistema',
+			'equipo' => 'Equipo',
 			'hora' => 'Hora',
 			'tiempo' => 'Tiempo',
+			'usuario' => 'Usuario',
 			'fecha' => 'Fecha',
 		);
 	}
@@ -81,9 +84,10 @@ class Renta extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('sistema',$this->sistema);
+		$criteria->compare('equipo',$this->equipo);
 		$criteria->compare('hora',$this->hora,true);
 		$criteria->compare('tiempo',$this->tiempo,true);
+		$criteria->compare('usuario',$this->usuario,true);
 		$criteria->compare('fecha',$this->fecha,true);
 
 		return new CActiveDataProvider($this, array(
