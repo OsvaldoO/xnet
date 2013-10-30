@@ -27,7 +27,7 @@ class RentaForm extends CFormModel
 		return array(
 			// name, email, subject and body are required
 			//array(', 'required'),
-			array('pago fin sistema accion horas minutos restante costo', 'safe')
+			array('pago, fin, sistema, accion, horas, minutos, restante, costo', 'safe')
 		);
 	}
 

@@ -10,46 +10,78 @@ class RentasController extends Controller
 	/**
 	 * @return array action filters
 	 */
-	
-	 public function actionIndex()
+	 private $id_equipo;
+	 private $equipo = new Equipo;
+	 private $equipos = array();
+	 private $model = new RentaForm;
+	 
+	 private function inicializar( $id )
+	 {
+	 	$this->id_equipo = $id;	
+	 	foreach(Sistema::model()->findAll() as $system)
+			$this->equipos[$system->id] = $system;
+		$this->equipo = $equipos[$id];
+		$this->model->equipo = $id;
+	 }
+	 
+	public function actionIndex()
     {
 		
     }
     
     public function actionRealizar ( $id = 1 ){
-    	$sistemas = array();
-    	$sistema = new Sistema;
-		 foreach(Sistema::model()->findAll() as $system)
-		 		$sistemas[$system->id] = $system;
-       	$model = new RentaForm;
-			if(isset($_POST['RentaForm'])){
-				$model->attributes=$_POST['RentaForm'];
-		 	 	if($model->accion == 'Iniciar' ){
-		 	 		$renta = new Renta;
-		 	 		$renta->sistema = $id;
-					$renta->hora = date("G:i");
-					$renta->tiempo = ($model->horas*60)+$model->minutos;
-					$renta->fecha = date("Y/n/j"); 
-					if( $renta->save() ){
-							$sistemas[$id]->disponible = 0;
-							$sistemas[$id]->pagado = $model->pago;
-						}
-						$model = $this->cargarModel( false, $model, $id );
+       	$this->inicializar( $id );
+		if(isset($_POST['RentaForm'])){
+			$this->model->attributes = $_POST['RentaForm'];
+			switch ( $this->model->accion ){
+			case 'Iniciar': $this->iniciar();
+				break;
+			case 'Detener': $this->detener();
+				break;
+			case 'Agregar': $this->agregar();
+				break;
+			case 'Abonar': $this->abonar();
+				break;
 			}
-			else if($model->accion == 'Detener' ) { 
-			$sistemas[$id]->disponible = 1;
-			$model->accion = 'Iniciar';
+			$this->equipo->save();
+		}else{
+			if( !$this->equipo->disponible ){
+				$this->model->pago = $this->equipo->pagado;
+				$this->cargarModel();
 			}
-			$sistema = $sistemas[$id];
-			$sistema->save();
-			$this->render('realizar', array( 'model' => $model, 'sistemas' => $sistemas, 'id'=>$id ));
+		$this->render('realizar', array( 'model' => $this->model, 'sistemas' => $this->equipos, 'id' => $this->id_equipo ));
+	}
+		 
+	private function agregar()
+	{
+		//$renta = new Renta();
+		$renta = Renta::model()->find('equipo='.$this->id_equipo );
+		$renta->tiempo += ($this->model->horas*60)+$this->model->minutos;
+		if( $renta->save() ){
+			$this->equipo->pagado = $this->model->pago;
+			$this->cargarModel( );
 		}
-		else{
-				$model->pago = $sistemas[$id]->pagado;
-				$model = $this->cargarModel( $sistemas[$id]->disponible, $model, $id);
-				$this->render('realizar', array( 'model' => $model, 'sistemas' => $sistemas, 'id'=>$id ));
-			}
-		 }
+	}
+	
+	private function iniciar( )
+	{
+		$renta = new Renta;
+		$renta->sistema = $this->id_equipo;
+		$renta->hora = date("G:i");
+		$renta->tiempo = ($this->model->horas*60)+$this->model->minutos;
+		$renta->fecha = date("Y/n/j"); 
+		if( $renta->save() ){
+			$this->equipo->disponible = 0;
+			$this->equipo->pagado = $this->model->pago;
+			$this->cargarModel( );
+		}
+	}
+	
+	private function detener()
+	{
+		$this->equipo->disponible = 1;
+		$this->model->accion = 'Iniciar';
+	}
     
 	public function filters()
 	{
@@ -59,22 +91,19 @@ class RentasController extends Controller
 		);
 	}
 	
-	public function cargarModel( $disponible, $model, $id ){
-		if(!$disponible){
-		 		$renta = Renta::model()->find('sistema='.$id );
-		 		$model->sistema = $renta->sistema;
-		 		$model->hora = substr($renta->hora, 0, 5);
-		 		$model->tiempo = $renta->tiempo;
-		 		$model->fin = strtotime ( '+'.$model->tiempo.' minute' , strtotime ( $model->hora ) ) ;
-				$model->fin = date ('G:i', $model->fin );
-				$model->restante = $this->restante($model->fin);
-				($model->pago) ? $model->costo = 0 : $model->costo = $model->tiempo * 0.2;
-		 		$model->accion='Detener';
-		 		}
-		 		else $model->accion = 'Iniciar';
-		 		$model->hora = $this->to12h($model->hora);
-		 		$model->fin = $this->to12h($model->fin);
-		 		return $model;
+	public function cargarModel( ){
+		 		$renta = Renta::model()->find('equipo='.$this->id_equipo );
+		 		$this->model->hora = substr($renta->hora, 0, 5);
+		 		$this->model->tiempo = $renta->tiempo;
+		 		$this->model->fin = strtotime ( '+'.$this->model->tiempo.' minute' , strtotime ( $this->model->hora ) ) ;
+				$this->model->fin = date ('G:i', $this->model->fin );
+				$this->model->restante = $this->restante($this->model->fin);
+				($this->model->pago) ? $this->model->costo = 0 : $this->model->costo = $this->model->tiempo * 0.2;
+		 		$this->model->hora = $this->to12h($model->hora);
+		 		$this->model->fin = $this->to12h($model->fin);
+		 		$this->model->accion='Detener';
+		 		else $this->model->accion = 'Iniciar';
+		 		
 	}
 	
 	function to12h( $hora ) {
@@ -130,6 +159,8 @@ class RentasController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
+	
+	
 
 	/**
 	 * Creates a new model.
