@@ -6,6 +6,7 @@
 	<meta name="language" content="en" />
 
 	<!-- blueprint CSS framework -->
+	<?Yii::app()->clientScript->registerCoreScript('jquery') ?> 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
 	<!--[if lt IE 8]>

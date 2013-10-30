@@ -40,9 +40,9 @@ class RentaForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			'horas'=>'Hs',
-			'minutos'=>'Ms',
-			'pago'=>'$',
+			'horas'=>'',
+			'minutos'=>'',
+			'pago'=>'',
 		);
 	}
 }
