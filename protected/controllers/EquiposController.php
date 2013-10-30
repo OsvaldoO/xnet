@@ -150,10 +150,11 @@ class EquiposController extends Controller
 				break;
 			case 'Detener': $this->detener();
 				break;
-			case 'Agregar': $this->agregar();
+			case 'Aumentar': $this->agregar();
 				break;
 			case 'Abonar': $this->abonar();
 				break;
+				default: var_dump($this->model);
 			}
 		}else{
 			if( !$this->equipo->disponible ){
@@ -176,6 +177,8 @@ class EquiposController extends Controller
 		 		$this->model->tiempo = $renta->tiempo;
 		 		$this->model->horas = (int)($renta->tiempo / 60);
 		 		$this->model->minutos = (int)($renta->tiempo % 60);
+		 		if( $this->model->minutos == 0 ) 
+		 			$this->model->minutos = '00';
 		 		$this->model->fin = strtotime ( '+'.$this->model->tiempo.' minute' , strtotime ( $this->model->hora ) ) ;
 				$this->model->fin = date ('G:i', $this->model->fin );
 				$this->restante( $renta->fecha );
@@ -183,7 +186,6 @@ class EquiposController extends Controller
 				//REPARAME : Tiempo se multiplica por costo de equipo
 		 		$this->model->hora = $this->to12h($this->model->hora);
 		 		$this->model->fin = $this->to12h($this->model->fin);
-		 		$this->model->accion='Detener';
 		 	}
 	}
 	
@@ -197,12 +199,14 @@ class EquiposController extends Controller
 		$datetime2 = new DateTime( $this->model->fin );
 		if ( $datetime1 >= $datetime2 || $fecha_renta !== date("Y-n-j") ) {
 			$this->model->restante = 0;
+			$this->model->accion='Detener';
 		}
 		else{
 		$interval = $datetime1->diff($datetime2);
 		if ($interval->format('%h') == 0 ) 
 			$this->model->restante = $interval->format('%i');
 		$this->model->restante = $interval->format('%h hrs %i');
+		$this->model->accion='Aumentar';
 		}
 	}
 	
@@ -228,6 +232,21 @@ class EquiposController extends Controller
 		$this->iniciarModel();
 		$this->model->accion = 'Iniciar';
 		$this->equipo->save();
+	}
+	
+	private function agregar()
+	{
+		$renta = new Renta();
+		$criteria = new CDbCriteria();
+		$criteria->order = "fecha DESC, hora DESC";
+		$criteria->condition = 'equipo='.$this->id_equipo;
+		  $renta = Renta::model()->find($criteria);
+		$renta->tiempo += ($this->model->horas*60)+$this->model->minutos;
+		if( $renta->save() ){
+			$this->equipo->pagado = $this->model->pago;
+			$this->equipo->save();
+			$this->cargarModel( );
+		}
 	}
 	/*public function actionIndex()
 	{

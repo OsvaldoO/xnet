@@ -12,21 +12,28 @@ foreach($sistemas as $system){
 ?>
 <div><font size='10'><?php echo $sistemas[$id]->nombre;?></font><font size='5' class='right'><?php echo $usuario;?></font></div>
 <?php $img = ($model->pago)? 'pagado': 'pago'?>
-<font  size = '15' style="border:solid black; padding:0px;float:left;background-color:#3CC"><div class='left' id='horas' > <?php echo ($model->horas)?$model->horas:0?></div>:<div class='right' id='minutos'><?php echo($model->minutos)?$model->minutos:30?></div> </font>
+<div class='span-5' ><font  size ='10' style="text-align:center;"><b id='horas' > <?php echo ($model->horas)?$model->horas:0?></b>:<b id='minutos'><?php echo($model->minutos)?$model->minutos:30?></b> </font></div>
 <img id='pago' src="<?php echo Yii::app()->request->baseUrl.'/images/'.$img.'.jpg' ; ?>" alt="Pago"  height="70" width="70">
 
 
 
 <?php $this->renderPartial('_rentaForm', array('model'=>$model, 'sistema'=> $sistemas[$id]));
 if (!$sistemas[$id]->disponible){
-	$color = ($model->restante === 0)?'background-color:orange':'';
-echo '<div style="border:solid black; padding:10px;'.$color.';">';
-	echo 'Inició: '.$model->hora.' -----> ';
-	echo 'Termina: '.$model->fin.'</br>';
-	echo 'Restan: '.$model->restante.' minutos</br>';
-	echo 'Deve: <h2 id="costo">'.$model->costo.'$</h2></br>';
-	echo '</div>';
-	}?>
+	$color = ($model->restante === 0)?'#FF7373':''; ?>
+	
+<div class='span-15'>
+	<font size="5"> Inicio</font><font size="5" class='right'> Finaliza</font><br/>
+	<div style="border:solid;background-color:#3CC">
+		<font  size='6'><?php echo $model->hora;?></font>
+		<font class='right' size='6' ><?php echo $model->fin;?></font>
+	</div>
+	<div class='' style="border:solid;background-color:<?php echo $color;?>">
+			<font size="6"> Restan</font> 	<font size="6" class='right' > Deve</font><br/>
+			<font  size='10'><?php echo $model->restante;?>minutos</font>
+			<font size='10' class='right' style='background-color:#FFFB73' ><?php echo $model->costo;?>$</font>
+	</div>
+</div>
+<?php 	}?>
 
  
  <script>
@@ -37,6 +44,9 @@ echo '<div style="border:solid black; padding:10px;'.$color.';">';
         });
         
   $("#horas").click(function() { 
+   if ( $('#action').attr('value' ) === 'Detener'){
+ 					agregar();
+ 			}
 var horas = $("#RentaForm_horas");
 horas.attr( 'value' ,parseInt(horas.attr('value') ) + 1 );
 if( horas.attr('value') >= '4' )
@@ -47,10 +57,20 @@ $("#RentaForm_minutos").attr( 'value', 0 );
 });
 
   $("#minutos").click(function() { 
+  if ( $('#action').attr('value' ) === 'Detener'){
+ 					agregar();
+ 			}
 var minutos = $("#RentaForm_minutos");
 minutos.attr( 'value', parseInt ( minutos.attr('value') ) + 15 );
 if( minutos.attr ( 'value' ) >= '60' )
 	minutos.attr( 'value', '00' ); 
 $(this).html ( minutos.attr( 'value') );
 });
+
+function agregar(){
+		$('#action').attr('value', 'Aumentar');
+ 			var src = '/xnet/images/pago.jpg';
+     			$("#RentaForm_pago").attr( "checked", 'false');
+            $('#pago').attr("src", src);
+}
 </script>

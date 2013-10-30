@@ -19,7 +19,7 @@
     <?php echo CHtml::activeCheckBox($model,'pago', array( 'class'=> 'hide' )); ?>
 
     <div class="row submit">
-         <?php echo CHtml::submitButton($model->accion); ?>
+         <?php echo CHtml::submitButton($model->accion, array ('id'=>'action')); ?>
     </div>
  
 
