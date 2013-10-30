@@ -30,7 +30,7 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Inicio', 'url'=>array('/site/index')),
+				array('label'=>'Perfil', 'url'=>array('/site/index')),
 				array('label'=>'Equipos', 'url'=>array('/equipos')),
 				array('label'=>'Ventas', 'url'=>array('/site/contact')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
@@ -49,9 +49,8 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
+		Atemajac de Brizuela Jalisco.<br/>
+		Morelos #114<br/> 
 	</div><!-- footer -->
 
 </div><!-- page -->

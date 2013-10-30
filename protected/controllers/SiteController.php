@@ -27,9 +27,35 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$extra = array();
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		$usuario = Usuario::model()->find('estado = 1');
+		foreach(Usuario::model()->findAll() as $user)
+			$usuarios[$user->clave] = $user;
+		$model = new Usuario;
+		if(isset($_POST['Usuario'])){
+			$model->attributes = $_POST['Usuario'];
+			if ( array_key_exists( $model->clave, $usuarios ) ){
+				 	$model = $usuarios[$model->clave];
+					$usuario->estado = 0;
+				if ( $usuario->update() ){
+						$model->estado = 1;
+						$model->update();
+						$usuario = $model;
+				}
+			}
+		}
+		$suma = Yii::app()->db->createCommand()
+        ->select('sum(tiempo)')
+        ->from('tbl_rentas')
+        ->where("usuario='".$usuario->clave."'")
+        ->queryRow();
+        $tiempo = $suma['sum(tiempo)'];
+       $extra['saldo'] = $tiempo/30;
+       $extra['horas'] = intval($tiempo/60);
+       $extra['minutos'] = intval($tiempo%60);
+		$this->render('index', array ( 'usuario' => $usuario, 'model' => $model,  'extra' => $extra));
 	}
 
 	/**

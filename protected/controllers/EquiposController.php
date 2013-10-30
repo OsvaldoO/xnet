@@ -11,11 +11,13 @@ class EquiposController extends Controller
 	 private $equipo;
 	 private $equipos = array();
 	 private $model;
+	 private $usuario;
 	/**
 	 * @return array action filters
 	 */
 	 private function inicializar( $id )
 	 {
+	 $this->usuario = Usuario::model()->find('estado = 1');
 	 $this->equipo = new Equipo;
 	 $this->model = new RentaForm;
 	 	$this->id_equipo = $id;	
@@ -157,7 +159,7 @@ class EquiposController extends Controller
 			}
 			else $this->model->accion='Iniciar';
 		}
-		$this->render('index', array( 'model' => $this->model, 'sistemas' => $this->equipos, 'id' => $this->id_equipo ));
+		$this->render('index', array( 'usuario' => $this->usuario->nick, 'model' => $this->model, 'sistemas' => $this->equipos, 'id' => $this->id_equipo ));
 	}
 	
 	public function cargarModel( ){
@@ -205,7 +207,7 @@ class EquiposController extends Controller
 		$renta->hora = date("G:i");
 		$renta->tiempo = ($this->model->horas*60)+$this->model->minutos;
 		$renta->fecha = date("Y/n/j"); 
-		$renta->usuario = 'osval'; // REPARAME : usuario se tomo de tabla usuarios = activo
+		$renta->usuario = $this->usuario;
 		if( $renta->save() ){
 			$this->equipo->disponible = 0;
 			$this->equipo->pagado = $this->model->pago;

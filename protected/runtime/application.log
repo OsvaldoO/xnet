@@ -4248,3 +4248,1329 @@ REQUEST_URI=/xnet/equipos/index/2
 in /var/www/xnet/protected/controllers/EquiposController.php (168)
 in /var/www/xnet/protected/controllers/EquiposController.php (156)
 in /var/www/xnet/index.php (13)
+2013/10/30 09:42:23 [error] [php] Trying to get property of non-object (/var/www/xnet/protected/controllers/EquiposController.php:168)
+Stack trace:
+#0 /var/www/xnet/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /var/www/xnet/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/xnet/framework/web/filters/CFilterChain.php(133): EquiposController->runAction()
+#4 /var/www/xnet/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/xnet/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/xnet/framework/web/filters/CInlineFilter.php(58): EquiposController->filterAccessControl()
+#7 /var/www/xnet/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/xnet/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/xnet/framework/web/CController.php(265): EquiposController->runActionWithFilters()
+#10 /var/www/xnet/framework/web/CWebApplication.php(282): EquiposController->run()
+#11 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/equipos/index/2
+in /var/www/xnet/protected/controllers/EquiposController.php (168)
+in /var/www/xnet/protected/controllers/EquiposController.php (156)
+in /var/www/xnet/index.php (13)
+2013/10/30 09:42:23 [error] [php] Trying to get property of non-object (/var/www/xnet/protected/controllers/EquiposController.php:168)
+Stack trace:
+#0 /var/www/xnet/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /var/www/xnet/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/xnet/framework/web/filters/CFilterChain.php(133): EquiposController->runAction()
+#4 /var/www/xnet/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/xnet/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/xnet/framework/web/filters/CInlineFilter.php(58): EquiposController->filterAccessControl()
+#7 /var/www/xnet/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/xnet/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/xnet/framework/web/CController.php(265): EquiposController->runActionWithFilters()
+#10 /var/www/xnet/framework/web/CWebApplication.php(282): EquiposController->run()
+#11 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/equipos/index/2
+in /var/www/xnet/protected/controllers/EquiposController.php (168)
+in /var/www/xnet/protected/controllers/EquiposController.php (156)
+in /var/www/xnet/index.php (13)
+2013/10/30 09:43:11 [error] [php] Trying to get property of non-object (/var/www/xnet/protected/controllers/EquiposController.php:168)
+Stack trace:
+#0 /var/www/xnet/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /var/www/xnet/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/xnet/framework/web/filters/CFilterChain.php(133): EquiposController->runAction()
+#4 /var/www/xnet/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/xnet/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/xnet/framework/web/filters/CInlineFilter.php(58): EquiposController->filterAccessControl()
+#7 /var/www/xnet/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/xnet/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/xnet/framework/web/CController.php(265): EquiposController->runActionWithFilters()
+#10 /var/www/xnet/framework/web/CWebApplication.php(282): EquiposController->run()
+#11 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/equipos/index/2
+in /var/www/xnet/protected/controllers/EquiposController.php (168)
+in /var/www/xnet/protected/controllers/EquiposController.php (156)
+in /var/www/xnet/index.php (13)
+2013/10/30 09:43:11 [error] [php] Trying to get property of non-object (/var/www/xnet/protected/controllers/EquiposController.php:168)
+Stack trace:
+#0 /var/www/xnet/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /var/www/xnet/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/xnet/framework/web/filters/CFilterChain.php(133): EquiposController->runAction()
+#4 /var/www/xnet/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /var/www/xnet/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /var/www/xnet/framework/web/filters/CInlineFilter.php(58): EquiposController->filterAccessControl()
+#7 /var/www/xnet/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /var/www/xnet/framework/web/CController.php(291): CFilterChain->run()
+#9 /var/www/xnet/framework/web/CController.php(265): EquiposController->runActionWithFilters()
+#10 /var/www/xnet/framework/web/CWebApplication.php(282): EquiposController->run()
+#11 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/equipos/index/2
+in /var/www/xnet/protected/controllers/EquiposController.php (168)
+in /var/www/xnet/protected/controllers/EquiposController.php (156)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:19:02 [error] [php] Undefined variable: sistema (/var/www/xnet/protected/views/site/_usuario.php:4)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/xnet/protected/views/site/index.php(16): SiteController->renderPartial()
+#2 /var/www/xnet/framework/web/CBaseController.php(126): require()
+#3 /var/www/xnet/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#4 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#5 /var/www/xnet/framework/web/CController.php(782): SiteController->renderPartial()
+#6 /var/www/xnet/protected/controllers/SiteController.php(45): SiteController->render()
+#7 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#8 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#10 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#11 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#12 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/views/site/_usuario.php (4)
+in /var/www/xnet/protected/views/site/index.php (16)
+in /var/www/xnet/protected/controllers/SiteController.php (45)
+2013/10/30 10:19:02 [error] [php] Undefined variable: sistema (/var/www/xnet/protected/views/site/_usuario.php:4)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/xnet/protected/views/site/index.php(16): SiteController->renderPartial()
+#2 /var/www/xnet/framework/web/CBaseController.php(126): require()
+#3 /var/www/xnet/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#4 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#5 /var/www/xnet/framework/web/CController.php(782): SiteController->renderPartial()
+#6 /var/www/xnet/protected/controllers/SiteController.php(45): SiteController->render()
+#7 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#8 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#10 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#11 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#12 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/views/site/_usuario.php (4)
+in /var/www/xnet/protected/views/site/index.php (16)
+in /var/www/xnet/protected/controllers/SiteController.php (45)
+2013/10/30 10:19:31 [error] [php] Undefined variable: usuario (/var/www/xnet/protected/views/site/_usuario.php:4)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/xnet/protected/views/site/index.php(16): SiteController->renderPartial()
+#2 /var/www/xnet/framework/web/CBaseController.php(126): require()
+#3 /var/www/xnet/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#4 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#5 /var/www/xnet/framework/web/CController.php(782): SiteController->renderPartial()
+#6 /var/www/xnet/protected/controllers/SiteController.php(45): SiteController->render()
+#7 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#8 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#10 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#11 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#12 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/views/site/_usuario.php (4)
+in /var/www/xnet/protected/views/site/index.php (16)
+in /var/www/xnet/protected/controllers/SiteController.php (45)
+2013/10/30 10:19:31 [error] [php] Undefined variable: usuario (/var/www/xnet/protected/views/site/_usuario.php:4)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/xnet/protected/views/site/index.php(16): SiteController->renderPartial()
+#2 /var/www/xnet/framework/web/CBaseController.php(126): require()
+#3 /var/www/xnet/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#4 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#5 /var/www/xnet/framework/web/CController.php(782): SiteController->renderPartial()
+#6 /var/www/xnet/protected/controllers/SiteController.php(45): SiteController->render()
+#7 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#8 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#10 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#11 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#12 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/views/site/_usuario.php (4)
+in /var/www/xnet/protected/views/site/index.php (16)
+in /var/www/xnet/protected/controllers/SiteController.php (45)
+2013/10/30 10:20:00 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave =osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (36)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:20:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave =osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(36): CActiveRecord->find('clave =osval')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:22:40 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave =osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (36)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:22:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave =osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(36): CActiveRecord->find('clave =osval')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:22:48 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'jessy' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave =jessy LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (36)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:22:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'jessy' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave =jessy LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(36): CActiveRecord->find('clave =jessy')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:23:47 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'jessy' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave =jessy LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (36)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:23:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'jessy' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave =jessy LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(36): CActiveRecord->find('clave =jessy')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:23:56 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave =osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (36)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:23:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave =osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(36): CActiveRecord->find('clave =osval')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:24:12 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave =osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (37)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:24:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave =osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(37): CActiveRecord->find('clave =osval')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:26:59 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (32)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:26:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(32): CActiveRecord->find('calve = osval')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:27:00 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (32)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:27:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(32): CActiveRecord->find('calve = osval')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:27:04 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (32)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:27:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(32): CActiveRecord->find('calve = osval')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+---
+2013/10/30 10:27:05 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (32)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:27:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(32): CActiveRecord->find('calve = osval')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:27:06 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (32)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:27:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(32): CActiveRecord->find('calve = osval')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+---
+2013/10/30 10:27:06 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (32)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:27:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(32): CActiveRecord->find('calve = osval')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:27:09 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (32)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:27:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(32): CActiveRecord->find('calve = osval')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/equipos
+---
+2013/10/30 10:27:09 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (32)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:27:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(32): CActiveRecord->find('calve = osval')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:27:24 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = "osval" LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (32)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:27:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = "osval" LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(32): CActiveRecord->find('calve = "osval"')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+---
+2013/10/30 10:27:24 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = "osval" LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (32)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:27:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = "osval" LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(32): CActiveRecord->find('calve = "osval"')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:27:25 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = "osval" LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (32)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:27:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = "osval" LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(32): CActiveRecord->find('calve = "osval"')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+---
+2013/10/30 10:27:26 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = "osval" LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (32)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:27:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = "osval" LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(32): CActiveRecord->find('calve = "osval"')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:27:27 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = "osval" LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (32)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:27:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = "osval" LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(32): CActiveRecord->find('calve = "osval"')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+---
+2013/10/30 10:27:28 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = "osval" LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (32)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:27:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'calve' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE calve = "osval" LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(32): CActiveRecord->find('calve = "osval"')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:29:54 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave=osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (34)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:29:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave=osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(34): CActiveRecord->find(Object(CDbCriteria))
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+---
+2013/10/30 10:29:55 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave=osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (34)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:29:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave=osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(34): CActiveRecord->find(Object(CDbCriteria))
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:29:55 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave=osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (34)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:29:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave=osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(34): CActiveRecord->find(Object(CDbCriteria))
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+---
+2013/10/30 10:29:56 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave=osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (34)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:29:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave=osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(34): CActiveRecord->find(Object(CDbCriteria))
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:29:57 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave=osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (34)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:29:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave=osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(34): CActiveRecord->find(Object(CDbCriteria))
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+---
+2013/10/30 10:29:57 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave=osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (34)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:29:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave=osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(34): CActiveRecord->find(Object(CDbCriteria))
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:30:40 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave = osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (34)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:30:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave = osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(34): CActiveRecord->find(Object(CDbCriteria))
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+---
+2013/10/30 10:30:40 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave = osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (34)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:30:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave = osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(34): CActiveRecord->find(Object(CDbCriteria))
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:34:14 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave = osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (34)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:34:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave = osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(34): CActiveRecord->find(Object(CDbCriteria))
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+---
+2013/10/30 10:34:14 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave = osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (34)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:34:14 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave = osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(34): CActiveRecord->find(Object(CDbCriteria))
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:34:16 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave = osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (34)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:34:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave = osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(34): CActiveRecord->find(Object(CDbCriteria))
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+---
+2013/10/30 10:34:16 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave = osval LIMIT 1.
+in /var/www/xnet/protected/controllers/SiteController.php (34)
+in /var/www/xnet/index.php (13)
+2013/10/30 10:34:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_usuarios` `t` WHERE clave = osval LIMIT 1' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/xnet/protected/controllers/SiteController.php(34): CActiveRecord->find(Object(CDbCriteria))
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 10:41:48 [error] [php] Undefined index: jessy (/var/www/xnet/protected/controllers/SiteController.php:39)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#1 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/controllers/SiteController.php (39)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:05:04 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nito' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_rentas` `t` WHERE usuario =nito.
+in /var/www/xnet/protected/controllers/SiteController.php (48)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:05:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nito' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_rentas` `t` WHERE usuario =nito' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/xnet/protected/controllers/SiteController.php(48): CActiveRecord->findAll('usuario =nito')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/equipos
+---
+2013/10/30 11:05:04 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nito' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_rentas` `t` WHERE usuario =nito.
+in /var/www/xnet/protected/controllers/SiteController.php (48)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:05:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nito' in 'where clause'. The SQL statement executed was: SELECT * FROM `tbl_rentas` `t` WHERE usuario =nito' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/xnet/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /var/www/xnet/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/xnet/protected/controllers/SiteController.php(48): CActiveRecord->findAll('usuario =nito')
+#4 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#5 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#9 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#10 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/xnet/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 11:13:16 [error] [exception.CException] exception 'CException' with message 'Renta and its behaviors do not have a method or closure named "select".' in /var/www/xnet/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/xnet/framework/db/ar/CActiveRecord.php(227): CComponent->__call('select', Array)
+#1 /var/www/xnet/protected/controllers/SiteController.php(48): CActiveRecord->__call('select', Array)
+#2 /var/www/xnet/protected/controllers/SiteController.php(48): Renta->select('tiempo')
+#3 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#8 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#9 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/xnet/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/xnet/site/index
+---
+2013/10/30 11:13:17 [error] [exception.CException] exception 'CException' with message 'Renta and its behaviors do not have a method or closure named "select".' in /var/www/xnet/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/xnet/framework/db/ar/CActiveRecord.php(227): CComponent->__call('select', Array)
+#1 /var/www/xnet/protected/controllers/SiteController.php(48): CActiveRecord->__call('select', Array)
+#2 /var/www/xnet/protected/controllers/SiteController.php(48): Renta->select('tiempo')
+#3 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#8 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#9 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/xnet/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 11:19:40 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nito' in 'where clause'. The SQL statement executed was: SELECT sum(tiempo)
+FROM `tbl_rentas`
+WHERE usuario =nito.
+in /var/www/xnet/protected/controllers/SiteController.php (52)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:19:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nito' in 'where clause'. The SQL statement executed was: SELECT sum(tiempo)
+FROM `tbl_rentas`
+WHERE usuario =nito' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/protected/controllers/SiteController.php(52): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#3 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#7 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#8 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/xnet/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/xnet/site/index
+---
+2013/10/30 11:19:40 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nito' in 'where clause'. The SQL statement executed was: SELECT sum(tiempo)
+FROM `tbl_rentas`
+WHERE usuario =nito.
+in /var/www/xnet/protected/controllers/SiteController.php (52)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:19:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'nito' in 'where clause'. The SQL statement executed was: SELECT sum(tiempo)
+FROM `tbl_rentas`
+WHERE usuario =nito' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/protected/controllers/SiteController.php(52): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#3 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#7 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#8 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/xnet/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 11:20:29 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT sum(tiempo)
+FROM `tbl_rentas`
+WHERE usuario =osval.
+in /var/www/xnet/protected/controllers/SiteController.php (52)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:20:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT sum(tiempo)
+FROM `tbl_rentas`
+WHERE usuario =osval' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/protected/controllers/SiteController.php(52): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#3 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#7 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#8 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/xnet/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/xnet/site/index
+---
+2013/10/30 11:20:30 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT sum(tiempo)
+FROM `tbl_rentas`
+WHERE usuario =osval.
+in /var/www/xnet/protected/controllers/SiteController.php (52)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:20:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT sum(tiempo)
+FROM `tbl_rentas`
+WHERE usuario =osval' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/protected/controllers/SiteController.php(52): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#3 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#7 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#8 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/xnet/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 11:21:49 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT sum(tiempo)
+FROM `tbl_rentas`
+WHERE usuario=osval.
+in /var/www/xnet/protected/controllers/SiteController.php (52)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:21:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT sum(tiempo)
+FROM `tbl_rentas`
+WHERE usuario=osval' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/protected/controllers/SiteController.php(52): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#3 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#7 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#8 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/xnet/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/xnet/site/index
+---
+2013/10/30 11:21:49 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT sum(tiempo)
+FROM `tbl_rentas`
+WHERE usuario=osval.
+in /var/www/xnet/protected/controllers/SiteController.php (52)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:21:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'osval' in 'where clause'. The SQL statement executed was: SELECT sum(tiempo)
+FROM `tbl_rentas`
+WHERE usuario=osval' in /var/www/xnet/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/xnet/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/xnet/protected/controllers/SiteController.php(52): CDbCommand->queryRow()
+#2 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#3 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/xnet/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/xnet/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/xnet/framework/web/CWebApplication.php(282): CController->run('index')
+#7 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#8 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/xnet/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/xnet/site/index
+HTTP_REFERER=http://localhost/xnet/site/index
+---
+2013/10/30 11:27:13 [error] [php] Undefined variable: tiempo (/var/www/xnet/protected/controllers/SiteController.php:54)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#1 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/controllers/SiteController.php (54)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:27:13 [error] [php] Undefined variable: tiempo (/var/www/xnet/protected/controllers/SiteController.php:54)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#1 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/controllers/SiteController.php (54)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:30:31 [error] [php] Array to string conversion (/var/www/xnet/protected/views/site/index.php:9)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/xnet/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/xnet/protected/controllers/SiteController.php(55): SiteController->render()
+#3 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/views/site/index.php (9)
+in /var/www/xnet/protected/controllers/SiteController.php (55)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:30:31 [error] [php] Array to string conversion (/var/www/xnet/protected/views/site/index.php:9)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/xnet/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/xnet/protected/controllers/SiteController.php(55): SiteController->render()
+#3 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/views/site/index.php (9)
+in /var/www/xnet/protected/controllers/SiteController.php (55)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:32:15 [error] [php] Undefined offset: 0 (/var/www/xnet/protected/controllers/SiteController.php:54)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#1 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/controllers/SiteController.php (54)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:32:16 [error] [php] Undefined offset: 0 (/var/www/xnet/protected/controllers/SiteController.php:54)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#1 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/controllers/SiteController.php (54)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:32:51 [error] [php] Array to string conversion (/var/www/xnet/protected/views/site/index.php:9)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/xnet/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/xnet/protected/controllers/SiteController.php(56): SiteController->render()
+#3 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/views/site/index.php (9)
+in /var/www/xnet/protected/controllers/SiteController.php (56)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:32:51 [error] [php] Array to string conversion (/var/www/xnet/protected/views/site/index.php:9)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/xnet/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/xnet/protected/controllers/SiteController.php(56): SiteController->render()
+#3 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/views/site/index.php (9)
+in /var/www/xnet/protected/controllers/SiteController.php (56)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:33:02 [error] [php] Use of undefined constant d - assumed 'd' (/var/www/xnet/protected/controllers/SiteController.php:55)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#1 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/controllers/SiteController.php (55)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:33:02 [error] [php] Use of undefined constant d - assumed 'd' (/var/www/xnet/protected/controllers/SiteController.php:55)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#1 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/controllers/SiteController.php (55)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:33:38 [error] [php] Array to string conversion (/var/www/xnet/protected/views/site/index.php:9)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/xnet/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/xnet/protected/controllers/SiteController.php(55): SiteController->render()
+#3 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/views/site/index.php (9)
+in /var/www/xnet/protected/controllers/SiteController.php (55)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:33:38 [error] [php] Array to string conversion (/var/www/xnet/protected/views/site/index.php:9)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/xnet/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/xnet/protected/controllers/SiteController.php(55): SiteController->render()
+#3 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/views/site/index.php (9)
+in /var/www/xnet/protected/controllers/SiteController.php (55)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:34:10 [error] [php] Array to string conversion (/var/www/xnet/protected/views/site/index.php:9)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/xnet/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/xnet/protected/controllers/SiteController.php(55): SiteController->render()
+#3 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/views/site/index.php (9)
+in /var/www/xnet/protected/controllers/SiteController.php (55)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:34:11 [error] [php] Array to string conversion (/var/www/xnet/protected/views/site/index.php:9)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/xnet/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/xnet/protected/controllers/SiteController.php(55): SiteController->render()
+#3 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/views/site/index.php (9)
+in /var/www/xnet/protected/controllers/SiteController.php (55)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:34:31 [error] [php] Array to string conversion (/var/www/xnet/protected/views/site/index.php:9)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/xnet/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/xnet/protected/controllers/SiteController.php(55): SiteController->render()
+#3 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/views/site/index.php (9)
+in /var/www/xnet/protected/controllers/SiteController.php (55)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:34:32 [error] [php] Array to string conversion (/var/www/xnet/protected/views/site/index.php:9)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/xnet/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /var/www/xnet/protected/controllers/SiteController.php(55): SiteController->render()
+#3 /var/www/xnet/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /var/www/xnet/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#6 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/views/site/index.php (9)
+in /var/www/xnet/protected/controllers/SiteController.php (55)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:37:26 [error] [php] Undefined index: tiempo (/var/www/xnet/protected/controllers/SiteController.php:55)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#1 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/controllers/SiteController.php (55)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:37:26 [error] [php] Undefined index: tiempo (/var/www/xnet/protected/controllers/SiteController.php:55)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#1 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/controllers/SiteController.php (55)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:43:09 [error] [php] Undefined variable: tiempo (/var/www/xnet/protected/controllers/SiteController.php:55)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#1 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/controllers/SiteController.php (55)
+in /var/www/xnet/index.php (13)
+2013/10/30 11:43:09 [error] [php] Undefined variable: tiempo (/var/www/xnet/protected/controllers/SiteController.php:55)
+Stack trace:
+#0 /var/www/xnet/framework/web/CController.php(286): SiteController->runAction()
+#1 /var/www/xnet/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#2 /var/www/xnet/framework/web/CWebApplication.php(282): SiteController->run()
+#3 /var/www/xnet/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/xnet/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/xnet/index.php(13): CWebApplication->run()
+REQUEST_URI=/xnet/site/index
+in /var/www/xnet/protected/controllers/SiteController.php (55)
+in /var/www/xnet/index.php (13)

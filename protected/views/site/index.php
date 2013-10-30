@@ -1,20 +1,22 @@
 <?php
 /* @var $this SiteController */
-
 $this->pageTitle=Yii::app()->name;
 ?>
+<?php $this->renderPartial('_usuario', array('model'=>$model) ); ?>
+<font size ='6'><?php echo $usuario->nick ?></font>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+<p><font size ='4'>
+	<ul>
+	<li>Todas las rentas Realizadas se relacionaran a este Usuario.</li>
+	<li>Si no eres el Usuario esperado ingresa tu clave para identificarte.</li>
+	</ul>
+</font></p>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
 
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-</ul>
+<div >
+<font size="6"> Tiempo</font><font size="6" class='right'> Saldo</font><br/><div style="border:solid;background-color:#3CC"><font  size='10'  > <?php echo $extra['horas'];?></font> Horas <font size='10' ><?php echo $extra['minutos'];?></font>Minutos 
+<div class= 'right'> 
+<font size= '10' style="background-color:#70ED3B"><?php echo $extra['saldo'];?>$</font>
+</div>
+</div>
 
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>

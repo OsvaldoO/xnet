@@ -10,7 +10,7 @@ foreach($sistemas as $system){
 	$this->menu[] = array('label'=>$system->nombre, 'url'=>array('/equipos/index/'.$system->id));
 }
 ?>
-<h1><?php echo $sistemas[$id]->nombre?></h1>
+<div><font size='10'><?php echo $sistemas[$id]->nombre;?></font><font size='5' class='right'><?php echo $usuario;?></font></div>
 <?php $img = ($model->pago)? 'pagado': 'pago'?>
 <font  size = '15' style="border:solid black; padding:0px;float:left;background-color:#3CC"><div class='left' id='horas' > <?php echo ($model->horas)?$model->horas:0?></div>:<div class='right' id='minutos'><?php echo($model->minutos)?$model->minutos:30?></div> </font>
 <img id='pago' src="<?php echo Yii::app()->request->baseUrl.'/images/'.$img.'.jpg' ; ?>" alt="Pago"  height="70" width="70">
