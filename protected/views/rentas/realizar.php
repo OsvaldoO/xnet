@@ -1,7 +1,6 @@
 <?php
 /* @var $this UsersController */
 /* @var $model Users */
-$links = array();
 $this->breadcrumbs=array(
     'Rentas',
 );

@@ -11,6 +11,7 @@ class EquiposController extends Controller
 	/**
 	 * @return array action filters
 	 */
+	 
 	public function filters()
 	{
 		return array(

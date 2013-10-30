@@ -11,6 +11,7 @@ class RentasController extends Controller
 	/**
 	 * @return array action filters
 	 */
+
 	public function filters()
 	{
 		return array(
@@ -55,6 +56,8 @@ class RentasController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
+	
+	
 
 	/**
 	 * Creates a new model.
