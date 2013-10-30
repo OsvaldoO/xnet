@@ -7,10 +7,23 @@ class EquiposController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
-
+	private $id_equipo;
+	 private $equipo;
+	 private $equipos = array();
+	 private $model;
 	/**
 	 * @return array action filters
 	 */
+	 private function inicializar( $id )
+	 {
+	 $this->equipo = new Equipo;
+	 $this->model = new RentaForm;
+	 	$this->id_equipo = $id;	
+	 	foreach(Equipo::model()->findAll() as $system)
+			$this->equipos[$system->id] = $system;
+		$this->equipo = $this->equipos[$id];
+		$this->model->equipo = $id;
+	 }
 	 
 	public function filters()
 	{
@@ -123,78 +136,85 @@ class EquiposController extends Controller
 	 */
 	 public function actionIndex( $id=1 )
 	{
-		$sistemas = array();
-    	$equipo = new Equipo;
-		 foreach(Equipo::model()->findAll() as $system)
-		 		$sistemas[$system->id] = $system;
-       	$model = new RentaForm;
-			if(isset($_POST['RentaForm'])){
-				$model->attributes=$_POST['RentaForm'];
-		 	 	if($model->accion == 'Iniciar' ){
-		 	 		$renta = new Renta;
-		 	 		$renta->equipo = $id;
-		 	 		$renta->usuario = 'osval';
-					$renta->hora = date("G:i");
-					$renta->tiempo = ($model->horas*60)+$model->minutos;
-					$renta->fecha = date("Y/n/j"); 
-					var_dump($renta);
-				echo '';
-					if( $renta->save() ){
-							$sistemas[$id]->disponible = 0;
-							$sistemas[$id]->pagado = $model->pago;
-						}
-						$model = $this->cargarModel( false, $model, $id );
+		$this->inicializar( $id );
+		if(isset($_POST['RentaForm'])){
+			$this->model->attributes = $_POST['RentaForm'];
+			switch ( $this->model->accion ){
+			case 'Iniciar': $this->iniciar();
+				break;
+			case 'Detener': $this->detener();
+				break;
+			case 'Agregar': $this->agregar();
+				break;
+			case 'Abonar': $this->abonar();
+				break;
 			}
-			else if($model->accion == 'Detener' ) { 
-			$sistemas[$id]->disponible = 1;
-			$model->accion = 'Iniciar';
+			$this->equipo->save();
+		}else{
+			if( !$this->equipo->disponible ){
+				$this->model->pago = $this->equipo->pagado;
+				$this->cargarModel();
 			}
-			$equipo = $sistemas[$id];
-			$equipo->save();
-			$this->render('index', array( 'model' => $model, 'sistemas' => $sistemas, 'id'=>$id ));
+			else $this->model->accion='Iniciar';
 		}
-		else{
-				$model->pago = $sistemas[$id]->pagado;
-				$model = $this->cargarModel( $sistemas[$id]->disponible, $model, $id);
-				var_dump($model);
-				echo '';
-				$this->render('index', array( 'model' => $model, 'sistemas' => $sistemas, 'id'=>$id ));
-			}
+		$this->render('index', array( 'model' => $this->model, 'sistemas' => $this->equipos, 'id' => $this->id_equipo ));
 	}
 	
-	public function cargarModel( $disponible, $model, $id ){
-		if(!$disponible){
-		 		$renta = Renta::model()->find('equipo='.$id );
-		 		$model->equipo = $renta->equipo;
-		 		$model->hora = substr($renta->hora, 0, 5);
-		 		$model->tiempo = $renta->tiempo;
-		 		$model->fin = strtotime ( '+'.$model->tiempo.' minute' , strtotime ( $model->hora ) ) ;
-				$model->fin = date ('G:i', $model->fin );
-				$model->restante = $this->restante($model->fin);
-				($model->pago) ? $model->costo = 0 : $model->costo = $model->tiempo * 0.2;
-				$model->hora = $this->to12h($model->hora);
-		 		$model->fin = $this->to12h($model->fin);
-		 		$model->accion='Detener';
-		 		}
-		 		else $model->accion = 'Iniciar';
-		 		return $model;
+	public function cargarModel( ){
+				$criteria = new CDbCriteria();
+				$criteria->order = "fecha DESC, hora DESC";
+				$criteria->condition = 'equipo='.$this->id_equipo;
+		 		$renta = Renta::model()->find($criteria);
+		 		$this->model->hora = substr($renta->hora, 0, 5);
+		 		$this->model->tiempo = $renta->tiempo;
+		 		$this->model->fin = strtotime ( '+'.$this->model->tiempo.' minute' , strtotime ( $this->model->hora ) ) ;
+				$this->model->fin = date ('G:i', $this->model->fin );
+				$this->restante( $renta->fecha );
+				($this->model->pago) ? $this->model->costo = 0 : $this->model->costo = $this->model->tiempo * 0.2;
+				//REPARAME : Tiempo se multiplica por costo de equipo
+		 		$this->model->hora = $this->to12h($this->model->hora);
+		 		$this->model->fin = $this->to12h($this->model->fin);
+		 		$this->model->accion='Detener';
 	}
 	
 	function to12h( $hora ) {
     	return date("g:i", strtotime( $hora ));
 }
 	
-	public function restante( $final ){
+	public function restante( $fecha_renta ){
 		$actual = date( "G:i" );
 		$datetime1 = new DateTime( $actual );
-		$datetime2 = new DateTime( $final );
-		if ( $datetime1 >= $datetime2 ) {
-			return 0;
+		$datetime2 = new DateTime( $this->model->fin );
+		if ( $datetime1 >= $datetime2 || $fecha_renta !== date("Y-n-j") ) {
+			$this->model->restante = 0;
 		}
+		else{
 		$interval = $datetime1->diff($datetime2);
 		if ($interval->format('%h') == 0 ) 
-			return $interval->format('%i');
-		return $interval->format('%h hrs %i');
+			$this->model->restante = $interval->format('%i');
+		$this->model->restante = $interval->format('%h hrs %i');
+		}
+	}
+	
+	private function iniciar( )
+	{
+		$renta = new Renta;
+		$renta->equipo = $this->id_equipo;
+		$renta->hora = date("G:i");
+		$renta->tiempo = ($this->model->horas*60)+$this->model->minutos;
+		$renta->fecha = date("Y/n/j"); 
+		$renta->usuario = 'osval'; // REPARAME : usuario se tomo de tabla usuarios = activo
+		if( $renta->save() ){
+			$this->equipo->disponible = 0;
+			$this->equipo->pagado = $this->model->pago;
+			$this->cargarModel( );
+		}
+	}
+	
+	private function detener()
+	{
+		$this->equipo->disponible = 1;
+		$this->model->accion = 'Iniciar';
 	}
 	/*public function actionIndex()
 	{

@@ -18,7 +18,7 @@
     
     <div class="left">
         <?php echo CHtml::activeLabel($model,'minutos'); ?>
-        <?php echo CHtml::activeNumberField($model,'minutos', array( 'step'=>15, 'value'=>($model->minutos)?$model->minutos:30, 'min'=>0, 'max'=>45 )) ?>
+        <?php echo CHtml::activeNumberField($model,'minutos', array( 'step'=>15,  'class' => 'hidden', 'value'=>($model->minutos)?$model->minutos:30, 'min'=>0, 'max'=>45 )) ?>
     </div>
     
     <?php echo CHtml::activeHiddenField($model,'equipo'); ?>
@@ -28,7 +28,6 @@
     		<?php echo CHtml::activeLabel($model,'pago'); ?>
         <?php echo CHtml::activeCheckBox($model,'pago', array( 'checked'=>false)); ?>
     </div>
- 
 
     <div class="left submit">
          <?php echo CHtml::submitButton($model->accion); ?>
