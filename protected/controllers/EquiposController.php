@@ -19,12 +19,16 @@ class EquiposController extends Controller
 	 {
 	 $this->usuario = Usuario::model()->find('estado = 1');
 	 $this->equipo = new Equipo;
-	 $this->model = new RentaForm;
-	 	$this->id_equipo = $id;	
-	 	foreach(Equipo::model()->findAll() as $system)
+	 $this->id_equipo = $id;	
+		foreach(Equipo::model()->findAll() as $system)
 			$this->equipos[$system->id] = $system;
 		$this->equipo = $this->equipos[$id];
-		$this->model->equipo = $id;
+		$this->iniciarModel();
+	 }
+	 
+	 private function iniciarModel(){
+	 	 $this->model = new RentaForm;
+	 	 $this->model->equipo = $this->id_equipo;
 	 }
 	 
 	public function filters()
@@ -151,7 +155,6 @@ class EquiposController extends Controller
 			case 'Abonar': $this->abonar();
 				break;
 			}
-			$this->equipo->save();
 		}else{
 			if( !$this->equipo->disponible ){
 				$this->model->pago = $this->equipo->pagado;
@@ -166,7 +169,9 @@ class EquiposController extends Controller
 				$criteria = new CDbCriteria();
 				$criteria->order = "fecha DESC, hora DESC";
 				$criteria->condition = 'equipo='.$this->id_equipo;
-		 		$renta = Renta::model()->find($criteria);
+		 		if( ! $renta = Renta::model()->find($criteria) )
+		 			$this->detener();
+		 		else {
 		 		$this->model->hora = substr($renta->hora, 0, 5);
 		 		$this->model->tiempo = $renta->tiempo;
 		 		$this->model->horas = (int)($renta->tiempo / 60);
@@ -179,6 +184,7 @@ class EquiposController extends Controller
 		 		$this->model->hora = $this->to12h($this->model->hora);
 		 		$this->model->fin = $this->to12h($this->model->fin);
 		 		$this->model->accion='Detener';
+		 	}
 	}
 	
 	function to12h( $hora ) {
@@ -207,10 +213,11 @@ class EquiposController extends Controller
 		$renta->hora = date("G:i");
 		$renta->tiempo = ($this->model->horas*60)+$this->model->minutos;
 		$renta->fecha = date("Y/n/j"); 
-		$renta->usuario = $this->usuario;
+		$renta->usuario = $this->usuario->clave;
 		if( $renta->save() ){
 			$this->equipo->disponible = 0;
 			$this->equipo->pagado = $this->model->pago;
+			$this->equipo->save();
 			$this->cargarModel( );
 		}
 	}
@@ -218,7 +225,9 @@ class EquiposController extends Controller
 	private function detener()
 	{
 		$this->equipo->disponible = 1;
+		$this->iniciarModel();
 		$this->model->accion = 'Iniciar';
+		$this->equipo->save();
 	}
 	/*public function actionIndex()
 	{
