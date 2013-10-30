@@ -167,6 +167,8 @@ class EquiposController extends Controller
 		 		$renta = Renta::model()->find($criteria);
 		 		$this->model->hora = substr($renta->hora, 0, 5);
 		 		$this->model->tiempo = $renta->tiempo;
+		 		$this->model->horas = (int)($renta->tiempo / 60);
+		 		$this->model->minutos = (int)($renta->tiempo % 60);
 		 		$this->model->fin = strtotime ( '+'.$this->model->tiempo.' minute' , strtotime ( $this->model->hora ) ) ;
 				$this->model->fin = date ('G:i', $this->model->fin );
 				$this->restante( $renta->fecha );

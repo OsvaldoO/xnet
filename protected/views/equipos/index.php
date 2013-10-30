@@ -11,9 +11,9 @@ foreach($sistemas as $system){
 }
 ?>
 <h1><?php echo $sistemas[$id]->nombre?></h1>
-
-<div style="border:solid black; padding:0px;float:left;background-color:#3CC"><font size='15' id='horas' onclick="aumentaHoras()" > <?php echo ($model->horas)?$model->horas:0?></font>:<font size = '15' id='minutos' onclick='aumentaMinutos()'><?php echo($model->minutos)?$model->minutos:30?></font> </div>
-<img id='pago' src="<?php echo Yii::app()->request->baseUrl; ?>/images/pago.jpg" alt="Pago"  height="70" width="70">
+<?php $img = ($model->pago)? 'pagado': 'pago'?>
+<font  size = '15' style="border:solid black; padding:0px;float:left;background-color:#3CC"><div class='left' id='horas' > <?php echo ($model->horas)?$model->horas:0?></div>:<div class='right' id='minutos'><?php echo($model->minutos)?$model->minutos:30?></div> </font>
+<img id='pago' src="<?php echo Yii::app()->request->baseUrl.'/images/'.$img.'.jpg' ; ?>" alt="Pago"  height="70" width="70">
 
 
 
@@ -36,24 +36,21 @@ echo '<div style="border:solid black; padding:10px;'.$color.';">';
             $(this).attr("src", src);
         });
         
-function aumentaHoras(){
-var horas = document.getElementById("RentaForm_horas");
-var horas_view = document.getElementById("horas");
-horas.value = parseInt(horas.value) + 1;
-if( horas.value >= '5' )
-	horas.value = 0; 
-horas_view.innerHTML = horas.value;
-document.getElementById("minutos").innerHTML = '00';
-document.getElementById("RentaForm_minutos").value = 0;
-}
+  $("#horas").click(function() { 
+var horas = $("#RentaForm_horas");
+horas.attr( 'value' ,parseInt(horas.attr('value') ) + 1 );
+if( horas.attr('value') >= '4' )
+	horas.attr('value', 0); 
+$(this).html ( horas.attr('value'));
+$( "#minutos" ).html( '00' );
+$("#RentaForm_minutos").attr( 'value', 0 );
+});
 
-function aumentaMinutos()
-{
-var minutos = document.getElementById("RentaForm_minutos");
-var minutos_view = document.getElementById("minutos");
-minutos.value = parseInt(minutos.value) + 15;
-if( minutos.value >= '60' )
-	minutos.value = '00'; 
-minutos_view.innerHTML = minutos.value;
-}
+  $("#minutos").click(function() { 
+var minutos = $("#RentaForm_minutos");
+minutos.attr( 'value', parseInt ( minutos.attr('value') ) + 15 );
+if( minutos.attr ( 'value' ) >= '60' )
+	minutos.attr( 'value', '00' ); 
+$(this).html ( minutos.attr( 'value') );
+});
 </script>
