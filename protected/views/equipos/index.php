@@ -40,11 +40,28 @@ if (!$sistemas[$id]->disponible){
 			echo '<big> '; echo ($model->minutos != 0)?$model->minutos:'0';?></big><small>Min</small></font>
 	</div>
 	<div class='' style="border:solid;background-color:<?php echo $color;?>">
-			<font size="6"> Restan</font> 	<font size="6" class='right span-4' style='background-color:#FFD300'> Deve</font><br/>
-			<font  size='10'><?php echo $model->restante;?><font size="6" > min</font></font>
-			<font size='8' class='right span-4' style='background-color:#FFD300' ><?php echo $model->costo;?>$</font>
+			<font size="6"> Transcurrido </font> 	<font size="6" class='right span-6' style='background-color:#00CC00'> Restan </font><br/>
+			<font  size='10'><?php echo $model->transcurrido;?><font size="6" > min</font></font>
+			<font size='8' class='right span-6' style='background-color:#00CC00' ><?php echo $model->restante;?> <font size='6'>min</font></font>
 	</div>
 </div>
+
+
+<div class='span-15' >
+
+	<div class = 'left'>
+			<font size='8' style='border:solid;background-color:#00CC00' ><?php echo $model->deuda;?>$</font></br>
+		<font size="5" > Renta </font>
+	</div>
+
+	<div class='right' style='position:relative;top:40%'>
+		<font size='10' class='right' style='border:solid;background-color:#FFD300'; ><?php echo $model->costo;?>$</font> </font></br>
+	<font size="5" class='right' > Deve</font>
+	</div>
+	
+		
+</div>
+
 <?php 	}?>
 
  
@@ -69,6 +86,12 @@ if (!$sistemas[$id]->disponible){
   $("#horas").click(function() { 
    if ( $('#action').attr('value' ) === 'Aumentar'){
  					modificarPago();
+ 					if( $(this).html() == '3' ){
+ 						if( $('#minutos').html() == '00' ){
+ 							$('#RentaForm_accion').attr('value', 'Cancelar');
+ 							 $('#action').attr('value', 'Cancelar' ) 
+ 						}
+ 					}
  			}
 var horas = $("#RentaForm_horas");
 horas.attr( 'value' ,parseInt(horas.attr('value') ) + 1 );
@@ -82,6 +105,12 @@ $("#RentaForm_minutos").attr( 'value', 0 );
   $("#minutos").click(function() { 
   if ( $('#action').attr('value' ) === 'Aumentar'){
  					modificarPago();
+ 					if( $(this).html() == '45' ){
+ 						if( $('#horas').html() == '0' ){
+ 							$('#RentaForm_accion').attr('value', 'Detener');
+ 							 $('#action').attr('value', 'Detener' ) 
+ 						}
+ 						}
  			}
 var minutos = $("#RentaForm_minutos");
 minutos.attr( 'value', parseInt ( minutos.attr('value') ) + 15 );
