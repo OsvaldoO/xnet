@@ -159,9 +159,8 @@ class EquiposController extends Controller
 				break;
 			case 'Abonar': $this->abonar();
 				break;
-			case 'Adeudar': $this->adeudar( $this->model->costo );
+			case 'Acumular': $this->acumular( $this->model->costo );
 				break;
-				default: var_dump($this->model);
 			}
 		}else{
 			if( !$this->equipo->disponible ){
@@ -199,7 +198,7 @@ class EquiposController extends Controller
 				$this->model->fin = date ('G:i', $this->model->fin );
 				$this->restante( $renta->fecha );
 				$this->model->transcurrido = $this->consumido(); 
-				$this->model->deuda = ( $this->model->restante == 0 )?$this->model->tiempo*$this->costo_equipo: $this->consumido( true ) * $this->costo_equipo;
+				$this->model->deuda = ( $this->model->restante === 0 )?$this->model->tiempo*$this->costo_equipo: $this->consumido( true ) * $this->costo_equipo;
 		 		$this->model->hora = $this->to12h($this->model->hora);
 		 		$this->model->fin = $this->to12h($this->model->fin);
 		 	}
@@ -305,31 +304,27 @@ class EquiposController extends Controller
 		$renta = Renta::model()->find($criteria);
 		$renta->tiempo += $tiempo;
 		if( $renta->save() ){
-			$this->adeudar( $tiempo * $this->costo_equipo );
+			$this->acumular( $tiempo * $this->costo_equipo );
 			$this->cargarModel( );
 			$this->equipo->save();
 
 		}
 	}
 	
-	private function adeudar( $deuda ){
+	private function acumular( $deuda ){
 		$this->equipo->deuda += floatval( $deuda );
-		$this->model->pago = false;
+		if ($this->equipo->deuda <= .50 ){
+			$this->model->pago =true;
+			$this->equipo->deuda = 0; 
+		}
+		else 	$this->model->pago = false;
 		$this->cargarModel( );
 		$this->equipo->save();
 	}
 	
 	private function limpiarValores(){
-	$this->model->costo = $this->equipo->deuda;
-	$this->model->costo = $this->redondear( $this->model->costo );
+	$this->equipo->deuda = $this->redondear( $this->equipo->deuda );
 	$this->model->deuda = $this->redondear( $this->model->deuda );
-	/*$diff = floatval($this->model->costo - intval( $this->model->costo ) ); 
-	if( !$diff  > 0 )
-			$this->model->costo = (int)$this->model->costo;
-	else if( $diff == 0.5 )
-		$this->model->costo = (int)$this->model->costo + 0.5 ; 
-		else
-	 	$this->model->costo = ( $diff > .5 )? (int)$this->model->costo+1: (int)$this->model->costo + 0.5 ; */
 	}
 	
 	private function redondear( $valor ){
