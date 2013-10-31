@@ -20,7 +20,7 @@ foreach($sistemas as $system){
 	</div>
 
 	<div class='right' style='position:relative;top:40%'>
-	<input id='deuda' type='text' size='5' style='font-size:150%;;'></input>$</br>
+	<?php if (!$sistemas[$id]->disponible){ ?><input id='deuda' type='text' size='5' style='font-size:150%;;'></input>$</br><?php }?>
 	<img id='pago' src="<?php echo Yii::app()->request->baseUrl.'/images/'.$img.'.jpg' ; ?>" alt="Pago"  height="80" width="80">
 
 	</div>
@@ -40,9 +40,9 @@ if (!$sistemas[$id]->disponible){
 			echo '<big> '; echo ($model->minutos != 0)?$model->minutos:'0';?></big><small>Min</small></font>
 	</div>
 	<div class='' style="border:solid;background-color:<?php echo $color;?>">
-			<font size="6"> Restan</font> 	<font size="6" class='right span-3' style='background-color:#FFD300'> Deve</font><br/>
+			<font size="6"> Restan</font> 	<font size="6" class='right span-4' style='background-color:#FFD300'> Deve</font><br/>
 			<font  size='10'><?php echo $model->restante;?><font size="6" > min</font></font>
-			<font size='10' class='right span-3' style='background-color:#FFD300' ><?php echo $model->costo;?>$</font>
+			<font size='8' class='right span-4' style='background-color:#FFD300' ><?php echo $model->costo;?>$</font>
 	</div>
 </div>
 <?php 	}?>
@@ -55,7 +55,6 @@ if (!$sistemas[$id]->disponible){
     				if( $('#deuda').attr('value') != '' ){
 					$('#RentaForm_costo').attr('value', $('#deuda').attr('value') );
     					$('#RentaForm_accion').attr('value', 'Adeudar');
-
     				}else
     					$('#RentaForm_accion').attr('value', 'Pagar');
     			} 

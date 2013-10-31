@@ -38,9 +38,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'pagado'); ?>
-		<?php echo $form->textField($model,'pagado'); ?>
-		<?php echo $form->error($model,'pagado'); ?>
+		<?php echo $form->labelEx($model,'deuda'); ?>
+		<?php echo $form->textField($model,'deuda'); ?>
+		<?php echo $form->error($model,'deuda'); ?>
 	</div>
 
 	<div class="row buttons">

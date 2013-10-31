@@ -25,6 +25,6 @@ $this->menu=array(
 		'nombre',
 		'tipo',
 		'disponible',
-		'pagado',
+		'deuda',
 	),
 )); ?>

@@ -21,8 +21,8 @@
 	<?php echo CHtml::encode($data->disponible); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('pagado')); ?>:</b>
-	<?php echo CHtml::encode($data->pagado); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('deuda')); ?>:</b>
+	<?php echo CHtml::encode($data->deuda); ?>
 	<br />
 
 

@@ -32,7 +32,7 @@ class Equipo extends CActiveRecord
 			array('disponible', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>20),
 			array('tipo', 'length', 'max'=>12),
-			array('deuda', 'length', 'max'=>3),
+			array('deuda', 'length', 'max'=>5),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, nombre, tipo, disponible, deuda', 'safe', 'on'=>'search'),

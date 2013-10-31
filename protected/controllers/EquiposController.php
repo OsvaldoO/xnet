@@ -12,6 +12,7 @@ class EquiposController extends Controller
 	 private $equipos = array();
 	 private $model;
 	 private $usuario;
+	 private $producto;
 	/**
 	 * @return array action filters
 	 */
@@ -23,10 +24,11 @@ class EquiposController extends Controller
 		foreach(Equipo::model()->findAll() as $system)
 			$this->equipos[$system->id] = $system;
 		$this->equipo = $this->equipos[$id];
-		$this->iniciarModel();
+		$this->producto = Producto::model()->find('clave="'.$this->equipo->tipo.'"');
+		$this->limpiaModel();
 	 }
 	 
-	 private function iniciarModel(){
+	 private function limpiaModel(){
 	 	 $this->model = new RentaForm;
 	 	 $this->model->equipo = $this->id_equipo;
 	 }
@@ -156,21 +158,24 @@ class EquiposController extends Controller
 				break;
 			case 'Abonar': $this->abonar();
 				break;
-			case 'Adeudar': $this->adeudar();
+			case 'Adeudar': $this->adeudar( $this->model->costo );
 				break;
 				default: var_dump($this->model);
 			}
 		}else{
 			if( !$this->equipo->disponible ){
-				$this->model->pago = $this->equipo->pagado;
+				if($this->equipo->deuda == 0 )
+				$this->model->pago = true;
 				$this->cargarModel();
 			}
 			else $this->model->accion='Iniciar';
 		}
+		$this->limpiarValores();
 		$this->render('index', array( 'usuario' => $this->usuario->nick, 'model' => $this->model, 'sistemas' => $this->equipos, 'id' => $this->id_equipo ));
 	}
 	
-	public function cargarModel( ){
+	
+		public function cargarModel( ){
 				$criteria = new CDbCriteria();
 				$criteria->order = "fecha DESC, hora DESC";
 				$criteria->condition = 'equipo='.$this->id_equipo;
@@ -179,14 +184,19 @@ class EquiposController extends Controller
 		 		else {
 		 		$this->model->hora = substr($renta->hora, 0, 5);
 		 		$this->model->tiempo = $renta->tiempo;
+		 		if($this->model->pago)
+					$this->equipo->deuda = 0;
+				else{
+						if( $this->model->accion == 'Iniciar' )
+							$this->equipo->deuda = $this->model->tiempo * $this->producto->costo;
+				}
 		 		$this->model->horas = (int)($renta->tiempo / 60);
 		 		$this->model->minutos = (int)($renta->tiempo % 60);
 		 		if( $this->model->minutos == 0 ) 
 		 			$this->model->minutos = '00';
 		 		$this->model->fin = strtotime ( '+'.$this->model->tiempo.' minute' , strtotime ( $this->model->hora ) ) ;
 				$this->model->fin = date ('G:i', $this->model->fin );
-				$this->restante( $renta->fecha );
-				($this->model->pago) ? $this->model->costo = 0 : $this->model->costo = $this->model->tiempo * 0.2;
+					$this->restante( $renta->fecha );
 				//REPARAME : Tiempo se multiplica por costo de equipo
 		 		$this->model->hora = $this->to12h($this->model->hora);
 		 		$this->model->fin = $this->to12h($this->model->fin);
@@ -214,6 +224,44 @@ class EquiposController extends Controller
 		}
 	}
 	
+	public function consumido( ){
+		$actual = date( "G:i" );
+		$datetime1 = new DateTime( $actual );
+		$datetime2 = new DateTime( $this->model->hora );
+		$interval = $datetime1->diff($datetime2);
+		if ($interval->format('%h') == 0 ) 
+			$this->model->restante = $interval->format('%i');
+		return  $interval->format('%h')*60+$interval->format('%i');
+	}
+	
+		public function iniciarModel( $renta ){
+		 		$this->model->hora = substr($renta->hora, 0, 5);
+		 		$this->model->tiempo = $renta->tiempo;
+		 		if($renta->tiempo == 0 ){
+		 			$this->model->tiempo = 100;
+		 			$this->equipo->deuda = 0;
+		 			$this->model->fin = 'Indefinido';
+		 			$this->model->restante = 'Indefinido';
+		 			$this->model->horas = 99;
+		 			$this->model->minutos = 99;
+		 		}
+		 		else{
+		 		if($this->model->pago)
+					$this->equipo->deuda = 0;
+				else
+					$this->equipo->deuda = $this->model->tiempo * $this->producto->costo;
+		 		$this->model->horas = (int)($renta->tiempo / 60);
+		 		$this->model->minutos = (int)($renta->tiempo % 60);
+		 		if( $this->model->minutos == 0 ) 
+		 			$this->model->minutos = '00';
+		 		$this->model->fin = strtotime ( '+'.$this->model->tiempo.' minute' , strtotime ( $this->model->hora ) ) ;
+				$this->model->fin = date ('G:i', $this->model->fin );
+				$this->restante( $renta->fecha );
+				//REPARAME : Tiempo se multiplica por costo de equipo
+		 		$this->model->hora = $this->to12h($this->model->hora);
+		 		$this->model->fin = $this->to12h($this->model->fin);
+		 		}
+	}
 	private function iniciar( )
 	{
 		$renta = new Renta;
@@ -224,43 +272,59 @@ class EquiposController extends Controller
 		$renta->usuario = $this->usuario->clave;
 		if( $renta->save() ){
 			$this->equipo->disponible = 0;
-			$this->equipo->pagado = $this->model->pago;
+			$this->iniciarModel( $renta );
 			$this->equipo->save();
-			$this->cargarModel( );
 		}
 	}
 	
 	private function detener()
 	{
 		$this->equipo->disponible = 1;
-		$this->iniciarModel();
+		$this->equipo->deuda = 0;
+		$this->limpiaModel();
 		$this->model->accion = 'Iniciar';
+		var_dump($this->equipo);
 		$this->equipo->save();
 	}
 	
 	private function pagar(){
-			$this->equipo->pagado = 1;
-			$this->equipo->save();
+			$this->model->pago = true;
 			$this->cargarModel( );
+			$this->equipo->save();
 	}
 	
 	private function agregar()
 	{
+		$tiempo = ($this->model->horas*60)+$this->model->minutos;
 		$renta = new Renta();
 		$criteria = new CDbCriteria();
 		$criteria->order = "fecha DESC, hora DESC";
 		$criteria->condition = 'equipo='.$this->id_equipo;
 		$renta = Renta::model()->find($criteria);
-		$renta->tiempo += ($this->model->horas*60)+$this->model->minutos;
+		$renta->tiempo += $tiempo;
 		if( $renta->save() ){
-			$this->equipo->pagado = $this->model->pago;
-			$this->equipo->save();
+			$this->adeudar( $tiempo * $this->producto->costo );
 			$this->cargarModel( );
+			$this->equipo->save();
+
 		}
 	}
 	
-	private function adeudar(){
-		
+	private function adeudar( $deuda ){
+		$this->equipo->deuda += floatval( $deuda );
+		$this->model->pago = false;
+		$this->cargarModel( );
+		var_dump($this->equipo);
+		$this->equipo->save();
+	}
+	
+	private function limpiarValores(){
+	$this->model->costo = $this->equipo->deuda;
+	$diff = floatval($this->model->costo - intval( $this->model->costo ) ); 
+	if( !$diff  > 0 )
+			$this->model->costo = (int)$this->model->costo;
+	else if($diff >.5)
+		$this->model->costo = (int)$this->model->costo+1; 
 	}
 	/*public function actionIndex()
 	{
