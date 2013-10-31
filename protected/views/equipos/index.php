@@ -12,25 +12,37 @@ foreach($sistemas as $system){
 ?>
 <div><font size='10'><?php echo $sistemas[$id]->nombre;?></font><font size='5' class='right'><?php echo $usuario;?></font></div>
 <?php $img = ($model->pago)? 'pagado': 'pago'?>
-<div class='span-5' ><font  size ='10' style="text-align:center;"><b id='horas' > <?php echo ($model->horas)?$model->horas:0?></b>:<b id='minutos'><?php echo($model->minutos)?$model->minutos:30?></b> </font></div>
-<img id='pago' src="<?php echo Yii::app()->request->baseUrl.'/images/'.$img.'.jpg' ; ?>" alt="Pago"  height="70" width="70">
+<div class='span-15' >
 
+	<div class = 'left'>
+		<font size="5" > Tiempo</font><br/>
+		<font size ='10' style="border:solid black;background-color:#5CCCCC;font-size:500%;"><b id='horas' >0</b>:<b id='minutos'><?php echo ($sistemas[$id]->tipo == 'pc')?'00':'30'?></b> </font>
+	</div>
 
+	<div class='right' style='position:relative;top:40%'>
+	<input type='text' size='5' style='font-size:150%;;'></input>$</br>
+	<img id='pago' src="<?php echo Yii::app()->request->baseUrl.'/images/'.$img.'.jpg' ; ?>" alt="Pago"  height="80" width="80">
 
-<?php $this->renderPartial('_rentaForm', array('model'=>$model, 'sistema'=> $sistemas[$id]));
+	</div>
+</div>
+		
+
+<?php $this->renderPartial('_rentaForm', array('model'=>$model, 'tipo'=> $sistemas[$id]->tipo));
 if (!$sistemas[$id]->disponible){
-	$color = ($model->restante === 0)?'#FF7373':''; ?>
+	$color = ($model->restante === 0)?'#FF7400':''; ?>
 	
 <div class='span-15'>
-	<font size="5"> Inicio</font><font size="5" class='right'> Finaliza</font><br/>
+	<font size="5"> Inicio</font><font size ='5' style='position:relative;left:120px;'>Finaliza </font><font size="5" class='right'> Tiempo Total</font><br/>
 	<div style="border:solid;background-color:#3CC">
 		<font  size='6'><?php echo $model->hora;?></font>
-		<font class='right' size='6' ><?php echo $model->fin;?></font>
+		<font  size='6' style='position:relative;left:120px;'><?php echo $model->fin;?></font>
+		<font class='right' size='5' ><?php echo ($model->horas != 0)?'<big>'.$model->horas.'</big><small>Hrs </small>':''; 
+			echo '<big> '; echo ($model->minutos != 0)?$model->minutos:'0';?></big><small>Min</small></font>
 	</div>
 	<div class='' style="border:solid;background-color:<?php echo $color;?>">
-			<font size="6"> Restan</font> 	<font size="6" class='right' > Deve</font><br/>
-			<font  size='10'><?php echo $model->restante;?>minutos</font>
-			<font size='10' class='right' style='background-color:#FFFB73' ><?php echo $model->costo;?>$</font>
+			<font size="6"> Restan</font> 	<font size="6" class='right span-3' style='background-color:#FFD300'> Deve</font><br/>
+			<font  size='10'><?php echo $model->restante;?><font size="6" > min</font></font>
+			<font size='10' class='right span-3' style='background-color:#FFD300' ><?php echo $model->costo;?>$</font>
 	</div>
 </div>
 <?php 	}?>
@@ -41,11 +53,15 @@ if (!$sistemas[$id]->disponible){
      			var src = '/xnet/images/pagado.jpg';
      			$("#RentaForm_pago").attr( "checked", 'true');
             $(this).attr("src", src);
+            if ( $('#action').attr('value' ) === 'Aumentar'){
+            $('#RentaForm_accion').attr('value', 'Pagar');
+            $('#rentaForm').submit();
+            }
         });
         
   $("#horas").click(function() { 
-   if ( $('#action').attr('value' ) === 'Detener'){
- 					agregar();
+   if ( $('#action').attr('value' ) === 'Aumentar'){
+ 					modificarPago();
  			}
 var horas = $("#RentaForm_horas");
 horas.attr( 'value' ,parseInt(horas.attr('value') ) + 1 );
@@ -57,8 +73,8 @@ $("#RentaForm_minutos").attr( 'value', 0 );
 });
 
   $("#minutos").click(function() { 
-  if ( $('#action').attr('value' ) === 'Detener'){
- 					agregar();
+  if ( $('#action').attr('value' ) === 'Aumentar'){
+ 					modificarPago();
  			}
 var minutos = $("#RentaForm_minutos");
 minutos.attr( 'value', parseInt ( minutos.attr('value') ) + 15 );
@@ -67,10 +83,9 @@ if( minutos.attr ( 'value' ) >= '60' )
 $(this).html ( minutos.attr( 'value') );
 });
 
-function agregar(){
-		$('#action').attr('value', 'Aumentar');
+function modificarPago(){
  			var src = '/xnet/images/pago.jpg';
-     			$("#RentaForm_pago").attr( "checked", 'false');
+     			$("#RentaForm_pago").attr( "checked", false);
             $('#pago').attr("src", src);
 }
 </script>

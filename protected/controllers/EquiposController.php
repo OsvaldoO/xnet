@@ -152,6 +152,8 @@ class EquiposController extends Controller
 				break;
 			case 'Aumentar': $this->agregar();
 				break;
+				case 'Pagar': $this->pagar();
+				break;
 			case 'Abonar': $this->abonar();
 				break;
 				default: var_dump($this->model);
@@ -205,7 +207,7 @@ class EquiposController extends Controller
 		$interval = $datetime1->diff($datetime2);
 		if ($interval->format('%h') == 0 ) 
 			$this->model->restante = $interval->format('%i');
-		$this->model->restante = $interval->format('%h hrs %i');
+		$this->model->restante = $interval->format('%h <font size="6">hrs</font> %i');
 		$this->model->accion='Aumentar';
 		}
 	}
@@ -234,13 +236,19 @@ class EquiposController extends Controller
 		$this->equipo->save();
 	}
 	
+	private function pagar(){
+			$this->equipo->pagado = 1;
+			$this->equipo->save();
+			$this->cargarModel( );
+	}
+	
 	private function agregar()
 	{
 		$renta = new Renta();
 		$criteria = new CDbCriteria();
 		$criteria->order = "fecha DESC, hora DESC";
 		$criteria->condition = 'equipo='.$this->id_equipo;
-		  $renta = Renta::model()->find($criteria);
+		$renta = Renta::model()->find($criteria);
 		$renta->tiempo += ($this->model->horas*60)+$this->model->minutos;
 		if( $renta->save() ){
 			$this->equipo->pagado = $this->model->pago;
