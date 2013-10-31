@@ -14,6 +14,7 @@
         <?php echo CHtml::activeNumberField($model,'minutos', array( 'step'=>15,  'class' => 'hide', 'value'=>($tipo == 'pc')?0:30, 'min'=>0, 'max'=>45 )) ?>
 
     <?php echo CHtml::activeHiddenField($model,'equipo'); ?>
+     <?php echo CHtml::activeHiddenField($model,'costo'); ?>
     <?php echo CHtml::activeHiddenField($model,'accion', array ( 'value' => $model->accion ) ); ?>
 
     <?php echo CHtml::activeCheckBox($model,'pago', array( 'class'=> 'hide' )); ?>

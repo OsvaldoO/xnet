@@ -156,6 +156,8 @@ class EquiposController extends Controller
 				break;
 			case 'Abonar': $this->abonar();
 				break;
+			case 'Adeudar': $this->adeudar();
+				break;
 				default: var_dump($this->model);
 			}
 		}else{
@@ -255,6 +257,10 @@ class EquiposController extends Controller
 			$this->equipo->save();
 			$this->cargarModel( );
 		}
+	}
+	
+	private function adeudar(){
+		
 	}
 	/*public function actionIndex()
 	{

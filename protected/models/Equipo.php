@@ -8,7 +8,7 @@
  * @property string $nombre
  * @property string $tipo
  * @property integer $disponible
- * @property integer $pagado
+ * @property string $deuda
  */
 class Equipo extends CActiveRecord
 {
@@ -29,12 +29,13 @@ class Equipo extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('nombre, tipo', 'required'),
-			array('disponible, pagado', 'numerical', 'integerOnly'=>true),
+			array('disponible', 'numerical', 'integerOnly'=>true),
 			array('nombre', 'length', 'max'=>20),
 			array('tipo', 'length', 'max'=>12),
+			array('deuda', 'length', 'max'=>3),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, tipo, disponible, pagado', 'safe', 'on'=>'search'),
+			array('id, nombre, tipo, disponible, deuda', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,7 +60,7 @@ class Equipo extends CActiveRecord
 			'nombre' => 'Nombre',
 			'tipo' => 'Tipo',
 			'disponible' => 'Disponible',
-			'pagado' => 'Pagado',
+			'deuda' => 'Deuda',
 		);
 	}
 
@@ -85,7 +86,7 @@ class Equipo extends CActiveRecord
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('tipo',$this->tipo,true);
 		$criteria->compare('disponible',$this->disponible);
-		$criteria->compare('pagado',$this->pagado);
+		$criteria->compare('deuda',$this->deuda,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

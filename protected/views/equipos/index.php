@@ -20,7 +20,7 @@ foreach($sistemas as $system){
 	</div>
 
 	<div class='right' style='position:relative;top:40%'>
-	<input type='text' size='5' style='font-size:150%;;'></input>$</br>
+	<input id='deuda' type='text' size='5' style='font-size:150%;;'></input>$</br>
 	<img id='pago' src="<?php echo Yii::app()->request->baseUrl.'/images/'.$img.'.jpg' ; ?>" alt="Pago"  height="80" width="80">
 
 	</div>
@@ -29,7 +29,7 @@ foreach($sistemas as $system){
 
 <?php $this->renderPartial('_rentaForm', array('model'=>$model, 'tipo'=> $sistemas[$id]->tipo));
 if (!$sistemas[$id]->disponible){
-	$color = ($model->restante === 0)?'#FF7400':''; ?>
+	$color = ($model->restante === 0)?'#FF7400':'#66E275'; ?>
 	
 <div class='span-15'>
 	<font size="5"> Inicio</font><font size ='5' style='position:relative;left:120px;'>Finaliza </font><font size="5" class='right'> Tiempo Total</font><br/>
@@ -49,14 +49,22 @@ if (!$sistemas[$id]->disponible){
 
  
  <script>
-    $("#pago").click(function() { 
+ 
+   $("#pago").click(function() { 
+    			if ( $('#action').attr('value' ) === 'Aumentar'){
+    				if( $('#deuda').attr('value') != '' ){
+					$('#RentaForm_costo').attr('value', $('#deuda').attr('value') );
+    					$('#RentaForm_accion').attr('value', 'Adeudar');
+
+    				}else
+    					$('#RentaForm_accion').attr('value', 'Pagar');
+    			} 
+    				if( $('#deuda').attr('value') == '' ){
      			var src = '/xnet/images/pagado.jpg';
      			$("#RentaForm_pago").attr( "checked", 'true');
             $(this).attr("src", src);
-            if ( $('#action').attr('value' ) === 'Aumentar'){
-            $('#RentaForm_accion').attr('value', 'Pagar');
-            $('#rentaForm').submit();
             }
+            $('#rentaForm').submit();
         });
         
   $("#horas").click(function() { 
