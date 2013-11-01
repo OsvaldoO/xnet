@@ -15,21 +15,21 @@ foreach($sistemas as $system){
 
 	<div class = 'left'>
 		<font size="5" > Tiempo</font><br/>
-		<font size ='10' style="border:solid black;background-color:#5CCCCC;font-size:500%;"><b id='horas' >0</b>:<b id='minutos'><?php echo ($sistema->tipo == 'pc')?'00':'30'?></b> </font>
+		<font size ='10' style="border:solid black;background-color:#5CCCCC;font-size:500%;"><b id='horas' >0</b>:<b id='minutos'><?php echo ($sistema->tipo == 'pc')?'30':'30'?></b> </font>
 	</div>
-
+		<img id='act' style='position:relative;left:20%;' src="<?php echo Yii::app()->request->baseUrl.'/images/'.$model->accion.'.png' ; ?>" alt="act"  height="120" width="120">
 	<div class='right' style='position:relative;top:40%'>
-	<?php if (!$sistema->disponible){ ?>
-	<input id='deuda' type='text' size='5' style='font-size:150%;;'></input>$</br><?php }?>
-	<img id='pago' src="<?php echo Yii::app()->request->baseUrl.'/images/'.$img.'.jpg' ; ?>" alt="Pago"  height="80" width="80">
-
+	<?php if (!$sistema->disponible){ ?>$<input id='deuda' type='text' size='5' style='font-size:150%;;'></input><?php }?>
 	</div>
 </div>
 		
 
 <?php $this->renderPartial('_rentaForm', array('model'=>$model, 'tipo'=> $sistema->tipo));
-if (!$sistema->disponible){
-	$color = ($model->restante === 0)?'#FF7600':'#36D695'; ?>
+	
+	if (!$sistema->disponible) 
+		$color = ($model->restante === 0)?'#FF7600':'#36D695'; 
+	else $color = '#FFF';
+	?>
 	
 <div class='span-15'>
 	<font size="5"> Inicio</font><font size ='5' style='position:relative;left:120px;'>Finaliza </font><font size="5" class='right'> Tiempo Total</font><br/>
@@ -40,9 +40,9 @@ if (!$sistema->disponible){
 			echo '<big> '; echo ($model->minutos != 0)?$model->minutos:'0';?></big><small>Min</small></font>
 	</div>
 	<div class='' style="border:solid;background-color:<?php echo $color;?>">
-			<font size="6"> Transcurrido </font> 	<font size="6" class='right span-6' style=''> Restan </font><br/>
+			<font size="6"> Transcurrido </font> 	<font size="6" class='right' style=''> Restan </font><br/>
 			<font  size='10'><?php echo $model->transcurrido;?><font size="6" > min</font></font>
-			<font size='8' class='right span-6' style='' ><?php echo $model->restante;?> <font size='6'>min</font></font>
+			<font size='8' class='right' style='' ><?php echo $model->restante;?> <font size='6'>min</font></font>
 	</div>
 </div>
 
@@ -50,19 +50,21 @@ if (!$sistema->disponible){
 <div class='span-15' >
 
 	<div class = 'left'>
-			<font size='8' style='border:solid;background-color:#33CDC7' ><?php echo $model->deuda;?>$</font></br>
+			<font size='8' style='border:solid;background-color:#33CDC7' >$<?php echo $model->deuda;?></font></br>
 		<font size="5" > Renta </font>
 	</div>
 
 	<div class='right' style='position:relative;top:40%'>
-		<font size='10' class='right' style='border:solid;background-color:#FFF700'; ><?php echo $sistema->deuda;?>$</font> </font></br>
+	<?php if (!$sistema->disponible){ ?>
+	<img id='pago' src="<?php echo Yii::app()->request->baseUrl.'/images/'.$img.'.png' ; ?>" alt="Pago"  height="65" width="65"><?php }?>
+		<font size='10' class='right' style='border:solid;background-color:#FFF700'; >$<?php echo $sistema->deuda;?></font> </font></br>
 	<font size="5" class='right' > Deve</font>
 	</div>
 	
 		
 </div>
 
-<?php 	}
+<?php 	
 Yii::app()->getClientScript()->registerScriptFile("/xnet/js/equipo_index.js");
 ?>
 
