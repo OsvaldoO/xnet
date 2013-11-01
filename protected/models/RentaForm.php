@@ -10,7 +10,6 @@ class RentaForm extends CFormModel
 	public $tiempo;
 	public $pago;
 	public $fin;
-	public $usuario;
 	public $equipo;
 	public $minutos;
 	public $horas;
@@ -30,7 +29,7 @@ class RentaForm extends CFormModel
 		return array(
 			// name, email, subject and body are required
 			//array(', 'required'),
-			array('pago, fin, equipo, accion ,usuario, horas, minutos, restante, costo, deuda, transcurrido', 'safe')
+			array('pago, fin, equipo, accion , horas, minutos, restante, costo, deuda, transcurrido', 'safe')
 		);
 	}
 

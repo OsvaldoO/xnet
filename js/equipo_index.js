@@ -72,7 +72,7 @@ function cambiaAcc( accion ){
 }
 
 function estado( est ){
-	  if ( $('#action').attr('value' ) === est )
+	  if ( $('#RentaForm_accion').attr('value' ) === est )
 	  	return true;
 	  return false;
 }

@@ -26,12 +26,16 @@ class EquiposController extends Controller
 		$this->equipo = $this->equipos[$id];
 		$costo= Costo::model()->find('clave="'.$this->equipo->tipo.'"');
 		$this->costo_equipo = $costo->costo;
-		$this->iniciarModel();
+		$this->prepararModel();
 	 }
 	 
-	  private function iniciarModel(){
+	 	 private function prepararModel(){
 	 	 $this->model = new RentaForm;
 	 	 $this->model->equipo = $this->id_equipo;
+	 	 $this->model->accion='Iniciar';
+	 	 }
+	 
+	  private function iniciarModel(){
 	 	 $this->model->accion='Iniciar';
 	 	 $this->model->hora = '00:00';
 		 $this->model->tiempo = '00:00';
@@ -47,8 +51,7 @@ class EquiposController extends Controller
 	 public function actionIndex( $id=1 )
 	{
 		$this->inicializar( $id );
-		if ( !$this->equipo->disponible ) 
-			$this->llenarModel( $this->getRenta( ) );
+		( !$this->equipo->disponible )?$this->llenarModel( $this->getRenta( ) ) : $this->iniciarModel();
 		if(isset($_POST['RentaForm'])){
 			$this->model->attributes = $_POST['RentaForm'];
 			switch ( $this->model->accion ){
@@ -104,7 +107,7 @@ class EquiposController extends Controller
 		$renta->equipo = $this->id_equipo;
 		$renta->hora = date("G:i");
 		$renta->tiempo = ($this->model->horas*60)+$this->model->minutos;
-		$renta->fecha = date("Y-n-j"); 
+		$renta->fecha = date("Y-n-d"); 
 		$renta->usuario = $this->usuario->clave;
 		if( $renta->save() ){
 			$this->equipo->disponible = 0;
@@ -144,9 +147,10 @@ class EquiposController extends Controller
 		$actual = date( "G:i" );
 		$datetime1 = new DateTime( $actual );
 		$datetime2 = new DateTime( $this->model->fin );
-		if ( $datetime1 >= $datetime2 || $fecha_renta != date("Y-n-j") ) {
+		if ( $datetime1 >= $datetime2 || $fecha_renta !== date("Y-n-d") ) {
 			$this->model->restante = 0;
 			$this->model->accion='Detener';
+
 		}
 		else{
 		$interval = $datetime1->diff($datetime2);
@@ -163,6 +167,7 @@ class EquiposController extends Controller
 		$this->equipo->disponible = 1;
 		$this->equipo->deuda = 0;
 		$this->equipo->save();
+		$this->prepararModel();
 		$this->iniciarModel();
 	}
 	
