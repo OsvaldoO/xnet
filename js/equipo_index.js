@@ -15,20 +15,21 @@ $( window ).load(function() {
  });
  
    $("#pago").click(function() { 
+   		if( $(this).attr('src') == '/xnet/images/pago.png' ){
     					$('#RentaForm_accion').attr('value', 'Pagar' );
     				 	$('#rentaForm').submit();
      					pagado( true );
+     		}
         });
         
   $("#horas").click(function() { 
-   if ( estado('Aumentar') ){
- 			pagado( false );
+   if ( estado('Aumentar')  ){
  		if( $(this).html() == '3' ){
  			if( $('#minutos').html() == '00' )
  				cambiaAcc('Detener');
  		}
  	}
- 	else if ( estado ('Detener') )
+ 	else if ( estado ('Detener') || estado('Acumular') )
  			cambiaAcc ('Aumentar');
 	var horas = $("#RentaForm_horas");
 	horas.attr( 'value' ,parseInt(horas.attr('value') ) + 1 );
@@ -41,13 +42,12 @@ $( window ).load(function() {
 
   $("#minutos").click(function() { 
   if ( estado('Aumentar') ){
- 					pagado( false );
  					if( $(this).html() == '45' ){
  						if( $('#horas').html() == '0' )
  							cambiaAcc('Detener');
  						}
  			}
- 	else if ( estado ('Detener') )
+ 	else if ( estado ('Detener')  || estado('Acumular') )
  			cambiaAcc ('Aumentar');
 var minutos = $("#RentaForm_minutos");
 minutos.attr( 'value', parseInt ( minutos.attr('value') ) + 15 );

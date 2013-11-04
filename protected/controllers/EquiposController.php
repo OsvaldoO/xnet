@@ -68,8 +68,6 @@ class EquiposController extends Controller
 			case 'Acumular': $this->acumularSaldo( $this->model->costo );
 				break;
 			}
-			if($this->model->accion != 'Iniciar' )
-				$this->model->accion = 'Aumentar';
 		}
 		if(!$this->equipo->disponible)
 			$this->limpiarDatos();
@@ -86,14 +84,18 @@ class EquiposController extends Controller
 	}
 	
 	public function llenarModel( $renta ){
-		 		$this->model->hora = substr($renta->hora, 0, 5);
+				$this->model->accion='Detener';
+				$this->model->hora = substr($renta->hora, 0, 5);
+				$this->tiempoConsumido(); 
+				$this->model->deuda = $this->model->transcurrido * $this->costo_equipo;
+				if( $renta->tiempo > 0 ){
 		 		$this->model->tiempo = $renta->tiempo;
 		 		$this->model->horas = (int)($renta->tiempo / 60);
 		 		$this->model->minutos = (int)($renta->tiempo % 60);
 		 		$this->model->fin= $this->incrementaHora( $this->model->hora, $this->model->tiempo );
 				$this->tiempoRestante( $renta->fecha );
-				$this->tiempoConsumido(); 
 				$this->model->pago = ( $this->equipo->deuda < 0.5 )? true: false;
+				}
 		 	}
 	
 	 private function incrementaHora ( $hora, $minutos ){
@@ -118,14 +120,15 @@ class EquiposController extends Controller
 	}
 	
 	private function limpiarDatos(){
+		if($this->model->tiempo > 0 ){
 		 $this->model->hora = $this->to12h($this->model->hora);
-		 $this->model->fin = $this->to12h($this->model->fin);
+		 $this->model->fin = $this->to12h($this->model->fin); 
 		if( $this->model->minutos == 0 ) 
 		$this->model->minutos = '00';
+		}
 		$this->equipo->deuda = $this->redondear( $this->equipo->deuda );
 		$this->model->deuda = $this->redondear( $this->model->deuda );
 	}
-	
 	function to12h( $hora ) {
     	return date("g:i", strtotime( $hora ));
 	}
@@ -135,12 +138,7 @@ class EquiposController extends Controller
 		$datetime1 = new DateTime( $actual );
 		$datetime2 = new DateTime( $this->model->hora );
 		$interval = $datetime1->diff($datetime2);
-		$minutos = (int)$interval->format('%h')*60+$interval->format('%i');
-		$this->model->deuda = ( $this->model->restante === 0 )?$this->model->tiempo*$this->costo_equipo: $minutos * $this->costo_equipo;
-		if ($interval->format('%h') == 0 ) 
-			$this->model->transcurrido = $interval->format('%i');
-		else
-			$this->model->transcurrido =  $interval->format('%h <font size="6">hrs</font> %i');
+		$this->model->transcurrido = (int)$interval->format('%h')*60+$interval->format('%i');
 	}
 	
 		public function tiempoRestante( $fecha_renta ){
@@ -149,16 +147,11 @@ class EquiposController extends Controller
 		$datetime2 = new DateTime( $this->model->fin );
 		if ( $datetime1 >= $datetime2 || $fecha_renta !== date("Y-n-d") ) {
 			$this->model->restante = 0;
-			$this->model->accion='Detener';
-
 		}
 		else{
-		$interval = $datetime1->diff($datetime2);
-		if ($interval->format('%h') == 0 ) 
-			$this->model->restante = $interval->format('%i');
-		else
-			$this->model->restante = $interval->format('%h <font size="6">hrs</font> %i');
-			$this->model->accion='Aumentar';
+			$interval = $datetime1->diff($datetime2);
+		 	$this->model->restante = $interval->format('%h')*60+$interval->format('%i');
+		 	$this->model->accion='Aumentar';
 		}
 	}
 	
@@ -167,6 +160,15 @@ class EquiposController extends Controller
 		$this->equipo->disponible = 1;
 		$this->equipo->deuda = 0;
 		$this->equipo->save();
+		if( $this->model->restante > 0 || $this->model->tiempo == 0 ){
+			if( $this->model->transcurrido < 5 )
+				$this->getRenta()->delete();
+			else{
+			$renta = $this->getRenta(); 
+			$renta->tiempo = $this->model->transcurrido;
+			$renta->save();
+			}
+		}
 		$this->prepararModel();
 		$this->iniciarModel();
 	}
@@ -175,6 +177,7 @@ class EquiposController extends Controller
 			$this->model->pago = true;
 			$this->equipo->deuda = 0 ;
 			$this->equipo->save();
+			$this->llenarModel( $this->getRenta() );
 	}
 	
 	private function agregarTiempo()
@@ -192,6 +195,7 @@ class EquiposController extends Controller
 		$this->equipo->deuda += floatval( $deuda );
 		$this->model->pago = ( $this->equipo->deuda < 0.5 )? true: false;
 		$this->equipo->save();
+		$this->llenarModel( $this->getRenta() );
 	}
 	
 	private function redondear( $valor ){

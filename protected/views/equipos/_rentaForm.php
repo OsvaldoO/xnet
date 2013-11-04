@@ -11,7 +11,7 @@
     <?php echo CHtml::errorSummary($model); ?>
         <?php echo CHtml::activeNumberField($model,'horas', array( 'step'=>1,  'class' => 'hide', 'value'=>0, 'min'=>0, 'max'=>5 )) ?>
 
-        <?php echo CHtml::activeNumberField($model,'minutos', array( 'step'=>15,  'class' => 'hide', 'value'=>($tipo == 'pc')?30:30, 'min'=>0, 'max'=>45 )) ?>
+        <?php echo CHtml::activeNumberField($model,'minutos', array( 'step'=>15,  'class' => 'hide', 'value'=>($tipo == 'pc')?00:30, 'min'=>0, 'max'=>45 )) ?>
 
     <?php echo CHtml::activeHiddenField($model,'equipo'); ?>
      <?php echo CHtml::activeHiddenField($model,'costo'); ?>

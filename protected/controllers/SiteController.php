@@ -51,8 +51,8 @@ class SiteController extends Controller
         ->from('tbl_rentas')
         ->where("usuario='".$usuario->clave."'")
         ->queryRow();
-        $tiempo = $suma['sum(tiempo)'];
-       $extra['saldo'] = $tiempo/30;
+      $tiempo = $suma['sum(tiempo)'];
+      $extra['saldo'] = ($tiempo/30) * 6 * 0.25  - $usuario->deuda;
        $extra['horas'] = intval($tiempo/60);
        $extra['minutos'] = intval($tiempo%60);
 		$this->render('index', array ( 'usuario' => $usuario, 'model' => $model,  'extra' => $extra));
