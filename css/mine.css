@@ -1,15 +1,58 @@
-#tiempo{
-	border:solid black;background-color:#5CCCCC;font-size:500%;
+#hora{
+	border-radius: 50px 50px;
+	border:solid black;background-color:#BBB;font-size:500%;
+	float:left;
+	margin-left:50px;
+	padding-right:50px;
+	padding-left:20px;
 }
+#div_trans{
+border:solid;background-color:#00BB3F;
+border-radius: 0px 50px 50px 0px;
+padding:10px;
+}
+#tiempo font{
+		margin-left:50px;
+	padding-left:100px;
+}
+#tiempo{
+padding-left:20px;
+margin-top:30px;
+}
+
+#acumular{
+	border-radius: 50px 50px;
+	border:solid black;background-color:#BBB;font-size:130%;
+	float:left;
+	padding:10px 30px 10px 100px;;
+	
+}
+
 .nota{
 color:gray;
 font-size:18px;
 }
-#act{
-position:relative;left:20%;
-height:120px;
-width:120px;
+
+#pago{
+position:relative;
+left:40%;
+top:-1px;
+height:85px;
+width:85px;
 }
+
+#act{
+position:relative;
+left:-37%;
+top:-28px;
+height:140px;
+width:140px;
+}
+
+.hid{
+visibility:hidden;
+}
+
 
 #deuda{
 font-size:250%;
@@ -21,24 +64,39 @@ font-size:25pt;
 }
 
 .centrado{
-position:relative;left:120px;
+position:relative;
+left:24%;
+top:-115px;
+padding:15px;
+padding-left:30px;
+border-radius: 50px 50px 0px 0px;
+}
+
+#tiempos{
+margin-top:15px;
+height:100px;
 }
 
 .clasic{
+padding:10px;
+border-radius: 50px 50px;
 border:solid;background-color:#3CC;
 }
 
-#vacia{
-border:solid;background-color:#FFF;
+.vacia{
+border:solid;background-color:#EEE;
 }
 
-#finaliza{
+.finaliza{
 border:solid;background-color:#FF7600;
 }
 
 #total{
+border-radius: 50px 50px 50px 50px;
+padding:10px;
+
 border:solid;background-color:#FFF700;
 }
-#inicia{
+.inicia{
 border:solid;background-color:#36D695;
 }

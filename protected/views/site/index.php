@@ -7,6 +7,7 @@ $this->pageTitle=Yii::app()->name;
 
 <p><font size ='4'>
 	<ul>
+		<li style='color:red'>Revisa la seccion de Ayuda para enterarte de los nuevos cambios</li>
 	<li>Todas las rentas Realizadas se relacionaran a este Usuario.</li>
 	<li>Si no eres el Usuario esperado ingresa tu clave para identificarte.</li>
 	</ul>
