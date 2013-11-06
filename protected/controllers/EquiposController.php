@@ -42,9 +42,7 @@ class EquiposController extends Controller
 		 $this->model->horas = '0';
 		 $this->model->minutos = '00';
 		 $this->model->fin = '00:00';
-		$this->model->restante = '0' ;
 		$this->model->deuda = '0';
-		$this->model->transcurrido = '0'; 
 	 }
 	 
 	 
@@ -120,14 +118,29 @@ class EquiposController extends Controller
 	}
 	
 	private function limpiarDatos(){
-		if($this->model->tiempo > 0 ){
-		 $this->model->hora = $this->to12h($this->model->hora);
-		 $this->model->fin = $this->to12h($this->model->fin); 
-		if( $this->model->minutos == 0 ) 
-		$this->model->minutos = '00';
-		}
+		$transcurrido = ($this->model->transcurrido > 60)?'<big>'.(int)($this->model->transcurrido/60).'</big><small>Hrs </small>':'';
+		$transcurrido .= '<big> '.(int)($this->model->transcurrido%60).'</big><small>Min</small>';
+		$this->model->transcurrido = $transcurrido;
 		$this->equipo->deuda = $this->redondear( $this->equipo->deuda );
 		$this->model->deuda = $this->redondear( $this->model->deuda );
+		if($this->model->tiempo > 0 ){
+		$restante = ($this->model->restante >= 60)?(int)($this->model->restante/60).'<font size="6">hrs</font>':'';
+		$restante .= (int)($this->model->restante%60).'<font size="6">min</font>';
+		$this->model->restante = $restante;
+		 $this->model->hora = $this->to12h($this->model->hora);
+		 $this->model->fin = $this->to12h($this->model->fin); 
+		$this->model->ttotal = ($this->model->horas != 0)?'<big>'.$this->model->horas.'</big><small>Hrs </small>':''.'<big> ';
+		$this->model->ttotal .= $this->model->minutos.'</big><small>Min</small>';
+		}
+		else {
+		$this->equipo->deuda = $this->equipo->deuda + $this->model->deuda;
+		$this->model->fin = '????';
+		$this->model->restante = '????';
+		$this->model->ttotal = $this->model->transcurrido;
+		}
+		
+		
+		
 	}
 	function to12h( $hora ) {
     	return date("g:i", strtotime( $hora ));

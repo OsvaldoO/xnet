@@ -1,7 +1,10 @@
 #tiempo{
 	border:solid black;background-color:#5CCCCC;font-size:500%;
 }
-
+.nota{
+color:gray;
+font-size:18px;
+}
 #act{
 position:relative;left:20%;
 height:120px;

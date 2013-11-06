@@ -61,6 +61,11 @@ class SiteController extends Controller
 	/**
 	 * This is the action to handle external exceptions.
 	 */
+	 public function actionAyuda()
+	{
+				$this->render('ayuda');
+	}
+	
 	public function actionError()
 	{
 		if($error=Yii::app()->errorHandler->error)
